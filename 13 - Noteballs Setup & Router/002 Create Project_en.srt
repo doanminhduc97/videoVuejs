@@ -1,0 +1,148 @@
+1
+00:00:01,050 --> 00:00:02,430
+Let's create a brand new view.
+
+2
+00:00:02,430 --> 00:00:04,410
+Three projects for Note Balsa.
+
+3
+00:00:04,440 --> 00:00:07,230
+So let's jump on over to The View three website.
+
+4
+00:00:07,260 --> 00:00:12,030
+I'll search for View three and jump to the 3.5. org.
+
+5
+00:00:12,360 --> 00:00:17,700
+Earlier on in the course, I told you that the docs are about to be massively revamped and I had to
+
+6
+00:00:17,700 --> 00:00:20,170
+change the URL to get to the new docs.
+
+7
+00:00:20,190 --> 00:00:22,450
+But it looks like the new docs are now live.
+
+8
+00:00:22,470 --> 00:00:26,430
+So we can just jump to install gold now and again.
+
+9
+00:00:26,430 --> 00:00:30,450
+We need to have no jazz installed, but you probably already have that installed at this point.
+
+10
+00:00:30,780 --> 00:00:33,510
+So let's create a new view project with this command.
+
+11
+00:00:33,870 --> 00:00:36,810
+So I'll copy that jump to my terminal NPS code.
+
+12
+00:00:36,810 --> 00:00:39,270
+And again, we can toggle this with control and back to it.
+
+13
+00:00:39,380 --> 00:00:41,780
+I'll make sure you're in the folder way you stole your projects.
+
+14
+00:00:41,790 --> 00:00:45,840
+You definitely don't want to run this in the previous projects folder, if that's where you are.
+
+15
+00:00:45,870 --> 00:00:51,750
+So I'll paste that in and launch that and I'll type in Y to agree to install create view.
+
+16
+00:00:53,170 --> 00:00:59,200
+And for the project name and the project folder, I'm going to use view dash composition API Dash Note
+
+17
+00:00:59,200 --> 00:00:59,740
+False.
+
+18
+00:01:00,010 --> 00:01:04,569
+But you can use any folder name you like and I'm going to choose no to all of the options.
+
+19
+00:01:04,810 --> 00:01:08,710
+We're not going to install value out to this time because going to install that from scratch and set
+
+20
+00:01:08,710 --> 00:01:09,760
+it all up from scratch.
+
+21
+00:01:09,760 --> 00:01:11,380
+So no on again with pen.
+
+22
+00:01:11,380 --> 00:01:12,940
+Yeah, we're going to set that up from scratch.
+
+23
+00:01:12,940 --> 00:01:15,640
+So I'm going to choose no, no, no.
+
+24
+00:01:15,640 --> 00:01:20,620
+And you might want to consider using your own projects to help you ensure code quality.
+
+25
+00:01:20,620 --> 00:01:25,240
+But for simplicity, I'm just going to choose notes of this and we have some launch steps here.
+
+26
+00:01:25,240 --> 00:01:30,370
+So we just need to see into the folder and run NPM install to install the dependencies and then run
+
+27
+00:01:30,370 --> 00:01:33,520
+npm run dev and I can see the folder it's created here.
+
+28
+00:01:33,550 --> 00:01:35,200
+Composition API, no pulse.
+
+29
+00:01:35,200 --> 00:01:37,300
+So when to drag that into B code?
+
+30
+00:01:39,370 --> 00:01:43,630
+And then open up the terminal and ruin AMPM and store.
+
+31
+00:01:49,090 --> 00:01:51,730
+And then AMPM run dev to launch it.
+
+32
+00:01:52,090 --> 00:01:54,070
+Okay, now we can come on and click on this link.
+
+33
+00:01:54,310 --> 00:01:56,230
+We can see the basic hop running in the browser.
+
+34
+00:01:56,530 --> 00:02:00,070
+Before we get started, let's just change the name that is in the top there.
+
+35
+00:02:00,160 --> 00:02:05,350
+So I'm going to open up the explorer and go to index dot HTML.
+
+36
+00:02:06,400 --> 00:02:11,110
+I just changed the text in these title tags to note balls saved up.
+
+37
+00:02:11,210 --> 00:02:13,720
+We're now ready to get started creating note balls.
+

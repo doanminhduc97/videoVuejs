@@ -1,0 +1,140 @@
+1
+00:00:01,140 --> 00:00:07,140
+This View Notes component is getting quite long now and we're going to be adding some more functionality
+
+2
+00:00:07,140 --> 00:00:13,740
+to each individual now, such as displaying the number of characters displaying a modal when the delete
+
+3
+00:00:13,740 --> 00:00:18,480
+button is clicked and sending the user to the edit page when the edit button is clicked.
+
+4
+00:00:18,870 --> 00:00:24,720
+So before this view notes component gets too messy, let's create a child component for an individual
+
+5
+00:00:24,720 --> 00:00:25,170
+note.
+
+6
+00:00:25,860 --> 00:00:31,980
+So I'm going to jump to the Explorer and go to source components.
+
+7
+00:00:32,770 --> 00:00:36,570
+Let's create a new folder here for all of the components related to our notes.
+
+8
+00:00:37,200 --> 00:00:38,490
+So we'll call this notes.
+
+9
+00:00:39,780 --> 00:00:43,080
+And inside that I'll create a new file called Notes dot view.
+
+10
+00:00:43,860 --> 00:00:45,570
+A lot template tags.
+
+11
+00:00:46,810 --> 00:00:48,100
+And I'll jump back to view.
+
+12
+00:00:48,100 --> 00:00:48,970
+Notes that view.
+
+13
+00:00:50,510 --> 00:00:52,910
+Alma, select all of this, Deb, with the class of card.
+
+14
+00:00:54,840 --> 00:00:56,370
+Which is displaying a note.
+
+15
+00:00:57,060 --> 00:00:57,810
+Just copy that.
+
+16
+00:00:59,000 --> 00:01:07,810
+Paste it into the template tags, fix the indentation and I'll just remove the v4 and the key attributes.
+
+17
+00:01:09,220 --> 00:01:09,880
+Save that.
+
+18
+00:01:10,330 --> 00:01:14,200
+Now let's jump back to view notes dot view and import this component.
+
+19
+00:01:15,250 --> 00:01:26,440
+So in our import section, we'll do import notes from slash components, slash notes, slash note,
+
+20
+00:01:26,830 --> 00:01:27,460
+dot view.
+
+21
+00:01:28,120 --> 00:01:28,750
+Save that.
+
+22
+00:01:28,990 --> 00:01:35,500
+Now, let's scroll up to this, Deb, with the class of card where we're displaying the note above that
+
+23
+00:01:36,790 --> 00:01:38,590
+we'll use our note component instead.
+
+24
+00:01:38,680 --> 00:01:43,000
+So note on if we can make this a self-closing tag.
+
+25
+00:01:43,690 --> 00:01:45,730
+I'll move the closing tag on to a new line.
+
+26
+00:01:47,110 --> 00:01:51,220
+And now we can just copy the VFR directive on the K property.
+
+27
+00:01:51,610 --> 00:01:53,380
+Paste it into this note component.
+
+28
+00:01:54,670 --> 00:01:57,760
+And now we can just get rid of this div or the class of card completely.
+
+29
+00:01:58,180 --> 00:02:01,750
+And save that reload.
+
+30
+00:02:03,310 --> 00:02:04,270
+We see an error here.
+
+31
+00:02:04,660 --> 00:02:09,220
+Cannot read properties of undefined reading content and our app is broken.
+
+32
+00:02:09,820 --> 00:02:16,240
+And that's because in note dot view in our template, we're trying to access this note object and this
+
+33
+00:02:16,240 --> 00:02:18,520
+content property from that object.
+
+34
+00:02:18,910 --> 00:02:23,920
+But this note object doesn't exist within the context of this note dot view component.
+
+35
+00:02:24,220 --> 00:02:31,180
+So we need to pass this down from view note stop view down to note w using a prop.
+

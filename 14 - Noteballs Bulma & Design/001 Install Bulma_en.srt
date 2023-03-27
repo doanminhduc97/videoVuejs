@@ -1,0 +1,176 @@
+1
+00:00:01,110 --> 00:00:02,960
+To help us make our outlook pretty.
+
+2
+00:00:02,969 --> 00:00:08,970
+We're going to use the Bouma library, so I'm going to jump to Boma dot IO.
+
+3
+00:00:09,480 --> 00:00:15,510
+Now this isn't a access course, so I won't be focusing on Boma and CC too much.
+
+4
+00:00:15,600 --> 00:00:21,000
+We're just simply using it to help us make our look pretty without having to spend tons of time writing.
+
+5
+00:00:21,840 --> 00:00:25,920
+And that way we can purely focus on Vue.js three on the composition API.
+
+6
+00:00:25,950 --> 00:00:30,180
+Also, I'm not necessarily suggesting that you should use Boma for your projects.
+
+7
+00:00:30,300 --> 00:00:34,560
+You should make an informed choice based on your individual projects needs.
+
+8
+00:00:34,680 --> 00:00:39,450
+However, I believe Boma is currently the third most popular CC framework.
+
+9
+00:00:39,750 --> 00:00:42,960
+After Bootstrap and Tailwind CC.
+
+10
+00:00:43,050 --> 00:00:48,840
+However, I've chosen BOMA for this project because it's the easiest CSA framework to get started with
+
+11
+00:00:48,850 --> 00:00:52,560
+and it has all of the components that we're going to need for this project.
+
+12
+00:00:52,710 --> 00:00:58,710
+So if I jump to documentation on components, we have this card component that we're going to use,
+
+13
+00:00:59,130 --> 00:01:04,830
+this KNOP component that we're going to use, the modal component that we're going to use.
+
+14
+00:01:05,010 --> 00:01:09,560
+And it has a bunch of farm components that we're going to use like this input.
+
+15
+00:01:09,690 --> 00:01:13,920
+And it also has a nice button component that we're going to use as well.
+
+16
+00:01:13,980 --> 00:01:16,860
+So let's get Boma installed to our project.
+
+17
+00:01:17,010 --> 00:01:22,680
+So I'm going to jump to overview and then start scroll down and there's a few ways we can install it.
+
+18
+00:01:22,680 --> 00:01:30,240
+We can install it using a CD link where it will be loading in externally, or we can download it from
+
+19
+00:01:30,240 --> 00:01:34,140
+GitHub or we can install the NPM package.
+
+20
+00:01:34,690 --> 00:01:36,160
+And this is the way I'm going to do it.
+
+21
+00:01:36,180 --> 00:01:39,360
+So we need to run NPM, install BOMA, so let's copy that.
+
+22
+00:01:39,990 --> 00:01:47,640
+Open up our terminal, kill the dev process and run NPM, install BOMA that's installed.
+
+23
+00:01:48,120 --> 00:01:54,570
+And if we jump to our node modules folder, we can see Boma is here and if we open the CSC folder,
+
+24
+00:01:55,170 --> 00:01:57,500
+we can see up all the access files.
+
+25
+00:01:57,610 --> 00:02:00,590
+I'm going to use the minified version bulma documents.
+
+26
+00:02:00,620 --> 00:02:05,190
+SS But we can also use the own minified version for modok costs.
+
+27
+00:02:05,250 --> 00:02:07,350
+So I'm going to right click on board the document.
+
+28
+00:02:07,690 --> 00:02:10,080
+SS Click on copy paste.
+
+29
+00:02:13,130 --> 00:02:13,370
+That.
+
+30
+00:02:13,370 --> 00:02:14,960
+I'm going to jump to The View.
+
+31
+00:02:15,200 --> 00:02:17,300
+I'm going to add a style tag.
+
+32
+00:02:19,230 --> 00:02:25,950
+And to import that CSV file I'm going to add at import and then I'll paste in that path.
+
+33
+00:02:26,640 --> 00:02:29,260
+We have the full path on my computer here.
+
+34
+00:02:29,610 --> 00:02:32,520
+But we only need the path from this Bournemouth of all here.
+
+35
+00:02:32,580 --> 00:02:34,260
+So I'll remove everything before that.
+
+36
+00:02:34,470 --> 00:02:38,160
+The folder and we need to add a semicolon at the end.
+
+37
+00:02:38,400 --> 00:02:40,880
+Let's say that we need to relaunch our up.
+
+38
+00:02:40,890 --> 00:02:44,240
+So let's run NPM, run depth, jump back to our app.
+
+39
+00:02:45,840 --> 00:02:51,010
+Now we can see our styles have already changed a little bit, but just to make sure Obama is working
+
+40
+00:02:51,190 --> 00:02:57,730
+less out of class to each of our routes, a link components here of button and this should give these
+
+41
+00:02:57,730 --> 00:02:59,050
+a nice button style.
+
+42
+00:03:01,340 --> 00:03:01,970
+Save that.
+
+43
+00:03:03,350 --> 00:03:05,920
+And yet we can see some nice little buttons now.
+
+44
+00:03:06,090 --> 00:03:08,960
+We can now start using Burma to make our outlook beautiful.
+

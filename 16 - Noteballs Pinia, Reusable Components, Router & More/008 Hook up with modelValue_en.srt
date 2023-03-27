@@ -1,0 +1,288 @@
+1
+00:00:01,170 --> 00:00:03,810
+This text area on the button are no longer working.
+
+2
+00:00:03,930 --> 00:00:09,000
+And that's because this text area, which is in our new child component add edit note that view is no
+
+3
+00:00:09,000 --> 00:00:13,350
+longer hooked up to this new note ref which we set up in this do notes component.
+
+4
+00:00:13,380 --> 00:00:20,400
+Well, what we can do is pass this new note ref down to add edit note child component using v model.
+
+5
+00:00:20,430 --> 00:00:24,810
+Then we can hook it all up using model value and update model value.
+
+6
+00:00:24,900 --> 00:00:31,320
+So first let's set the V model of this add edit note component to new note, which was originally bound
+
+7
+00:00:31,320 --> 00:00:36,960
+to the text area so we can add a V model directive and set that to new notes.
+
+8
+00:00:37,380 --> 00:00:43,770
+Save that and we can now receive the value of this V model in a add edit note component using the special
+
+9
+00:00:43,800 --> 00:00:47,850
+model value and then we can bind that prop to this text area.
+
+10
+00:00:47,910 --> 00:00:49,020
+Do you remember how we do that?
+
+11
+00:00:49,140 --> 00:00:51,840
+Feel free to pause the video and give it a try.
+
+12
+00:00:52,050 --> 00:01:00,630
+So what we need to do is add a script, set up tags, and we need to receive the value of this V model
+
+13
+00:01:00,630 --> 00:01:02,870
+using the model value prop.
+
+14
+00:01:02,910 --> 00:01:12,450
+So we need to set up props and we do that by adding a constant called props set by equal to the define
+
+15
+00:01:12,690 --> 00:01:13,980
+props method.
+
+16
+00:01:13,980 --> 00:01:18,270
+And we can pass our props in here and we want to receive the model value.
+
+17
+00:01:18,300 --> 00:01:22,320
+Prop on the type is going to be string.
+
+18
+00:01:26,870 --> 00:01:28,040
+This is going to be required.
+
+19
+00:01:28,880 --> 00:01:33,140
+So we'll set required to save that.
+
+20
+00:01:33,380 --> 00:01:36,950
+We can now bind this model value prop to the text area.
+
+21
+00:01:37,280 --> 00:01:43,640
+We can do that by just setting the V model to model value and I'll save that to check.
+
+22
+00:01:43,640 --> 00:01:44,360
+This is working.
+
+23
+00:01:44,390 --> 00:01:46,280
+Let's jump to a few notes that view.
+
+24
+00:01:46,310 --> 00:01:50,090
+I will change the default value of this new note ref.
+
+25
+00:01:51,640 --> 00:01:52,270
+And that's here.
+
+26
+00:01:52,600 --> 00:01:54,670
+So I'll stick some text in there, save that.
+
+27
+00:01:54,760 --> 00:02:00,140
+And we can say that text is getting through to the text area in our new reusable component.
+
+28
+00:02:00,220 --> 00:02:04,690
+However, if we output this new note ref somewhere on our page.
+
+29
+00:02:06,830 --> 00:02:14,390
+So let's say we had a pretext after this odd edit note component and we just output new notes, save
+
+30
+00:02:14,390 --> 00:02:17,870
+that reload and then we make a change to the text area.
+
+31
+00:02:18,650 --> 00:02:24,290
+We can see the value of this new note ref is not being updated and so what we need to do in our new
+
+32
+00:02:24,290 --> 00:02:25,070
+child component.
+
+33
+00:02:25,310 --> 00:02:32,390
+Edit Note W is explicitly let the parent component know a few notes that view when the value in the
+
+34
+00:02:32,390 --> 00:02:35,690
+text area has changed so that it can update the value.
+
+35
+00:02:36,560 --> 00:02:41,060
+In this new note ref and we can do that using update model value.
+
+36
+00:02:41,240 --> 00:02:44,880
+So let's jump to add edit note w and you remember how we do that.
+
+37
+00:02:44,900 --> 00:02:47,530
+Again, feel free to pause and try and do it yourself.
+
+38
+00:02:47,540 --> 00:02:51,640
+But what we need to do is set up our omits.
+
+39
+00:02:54,380 --> 00:03:03,170
+So create a constant called emit so the equal to the define emits method and we could pass in our emit
+
+40
+00:03:03,410 --> 00:03:10,400
+events into this define emits array and we want to add the event update code on model value.
+
+41
+00:03:10,940 --> 00:03:16,580
+This is a special event which will allow us to directly modify a value that's coming from the parent
+
+42
+00:03:16,580 --> 00:03:22,940
+component by a V model without having to emit any events from the child component and listen out for
+
+43
+00:03:22,940 --> 00:03:24,800
+those events and then make the change.
+
+44
+00:03:24,890 --> 00:03:30,080
+So update model value allows us to modify this new note ref, which is on its parent component.
+
+45
+00:03:30,200 --> 00:03:36,170
+So let's jump back to add edit note w and what we can do here is listen out for the input event on this
+
+46
+00:03:36,170 --> 00:03:40,250
+text area which will be triggered every time we make a change to this text area.
+
+47
+00:03:40,250 --> 00:03:42,260
+So we can just add that input.
+
+48
+00:03:42,380 --> 00:03:51,320
+And what we want to do is emit with emit and we want to emit the update column model value event.
+
+49
+00:03:51,740 --> 00:03:57,290
+We need to pass in the value that we want to set up to assign set the value that's being passed down
+
+50
+00:03:57,290 --> 00:04:01,130
+with the V model on the parent component as the second parameter.
+
+51
+00:04:01,130 --> 00:04:05,810
+And so we can just set that to model value, save that, let's see if that's working.
+
+52
+00:04:06,080 --> 00:04:09,560
+Reload this page, change the value of the text area.
+
+53
+00:04:10,130 --> 00:04:15,710
+And yeah, we can see this pre tag on the view notes dot view component is being updated.
+
+54
+00:04:15,950 --> 00:04:21,470
+So we know that this new note ref on the parent component is being successfully updated by the child
+
+55
+00:04:21,470 --> 00:04:27,320
+component add edit note up view by listening out for the input event on the text area and then emitting
+
+56
+00:04:27,320 --> 00:04:34,310
+the update model value event passing in the latest value which will then directly update the value of
+
+57
+00:04:34,310 --> 00:04:37,610
+the model you note, which we're passing in here.
+
+58
+00:04:37,700 --> 00:04:42,890
+So before we move on, let's remove this pre tag that we added on all of this code that we commented
+
+59
+00:04:42,890 --> 00:04:43,190
+out.
+
+60
+00:04:43,490 --> 00:04:44,210
+Get rid of that.
+
+61
+00:04:44,720 --> 00:04:49,580
+And we also need to set the default value of new note up to an empty string.
+
+62
+00:04:49,910 --> 00:04:51,800
+Save that reload.
+
+63
+00:04:52,490 --> 00:04:54,100
+Let's make sure everything is working.
+
+64
+00:04:54,830 --> 00:04:58,790
+So I put a new note, click on the button and the new note was added.
+
+65
+00:04:58,910 --> 00:05:03,830
+However, we see an error in our console, cannot read properties a note reading focus.
+
+66
+00:05:03,830 --> 00:05:09,770
+And that's because in this line here, after we add a new note by sending the note content to our add
+
+67
+00:05:09,770 --> 00:05:16,370
+note action in our store, we're trying to focus an element which has a template ref of new note ref.
+
+68
+00:05:16,550 --> 00:05:19,430
+And this ref no longer exists on this component.
+
+69
+00:05:19,790 --> 00:05:24,500
+This template ref is now down in the child component add edit note dot view here.
+
+70
+00:05:24,620 --> 00:05:29,600
+And so that's why this text area is not focusing after we add a new note and that's why we're seeing
+
+71
+00:05:29,600 --> 00:05:30,080
+this error.
+
+72
+00:05:30,200 --> 00:05:31,490
+So let's fix that next.
+

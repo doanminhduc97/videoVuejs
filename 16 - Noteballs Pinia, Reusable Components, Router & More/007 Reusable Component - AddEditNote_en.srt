@@ -1,0 +1,220 @@
+1
+00:00:01,250 --> 00:00:01,670
+Okay.
+
+2
+00:00:01,670 --> 00:00:07,080
+So what are we actually going to need on this new edit note view that we've created in order to edit
+
+3
+00:00:07,100 --> 00:00:08,390
+a note and save it?
+
+4
+00:00:08,630 --> 00:00:14,660
+Well, basically what we need is a text area which we can load the note into and allow the user to edit
+
+5
+00:00:14,660 --> 00:00:14,840
+it.
+
+6
+00:00:15,230 --> 00:00:17,930
+And we need a save button so the user can save it.
+
+7
+00:00:18,200 --> 00:00:23,540
+So basically what we need is if we go back exactly what we have at the top of our notes view here,
+
+8
+00:00:23,720 --> 00:00:25,610
+we just need a text area and a button.
+
+9
+00:00:26,060 --> 00:00:33,800
+Now we could just jump to our notes, view and source views, view notes, and we could just copy this
+
+10
+00:00:33,800 --> 00:00:36,440
+card element and all of the fields inside it.
+
+11
+00:00:38,060 --> 00:00:41,990
+Paste that into view, edit no view and then repurpose it.
+
+12
+00:00:42,590 --> 00:00:48,380
+Well then we'll be duplicating code and we always want to avoid duplicating code as much as possible
+
+13
+00:00:48,530 --> 00:00:53,570
+so it makes more sense to create a reusable component out of this card.
+
+14
+00:00:53,600 --> 00:00:57,620
+The text area on the bottom that we can use anywhere within our app.
+
+15
+00:00:57,770 --> 00:01:01,580
+So let's jump to our Explorer in our notes folder.
+
+16
+00:01:02,090 --> 00:01:09,380
+Let's create a new file called Add edit note dot view because we are going to be able to see both ADD
+
+17
+00:01:09,380 --> 00:01:11,900
+and added to note using this component.
+
+18
+00:01:13,280 --> 00:01:14,990
+Let's add template tags.
+
+19
+00:01:16,190 --> 00:01:20,810
+Now let's jump to view notes dot view and we'll copy this markup.
+
+20
+00:01:21,530 --> 00:01:26,450
+So this did with the class of card and all the stuff inside it will copy that.
+
+21
+00:01:27,290 --> 00:01:29,990
+Paste it into our template here in our new component.
+
+22
+00:01:31,290 --> 00:01:34,460
+Now let's remove all of the dynamic stuff which will break here.
+
+23
+00:01:34,790 --> 00:01:38,550
+So let's remove this view model from the text area and remove this.
+
+24
+00:01:38,570 --> 00:01:44,030
+Click on the disabled prop from the well to save that.
+
+25
+00:01:44,420 --> 00:01:50,240
+Now we want to be able to control the buttons that get displayed here because on our notes page we want
+
+26
+00:01:50,240 --> 00:01:55,670
+this new note button, but on the edit page, then we probably want a button that says save or save
+
+27
+00:01:55,670 --> 00:01:56,990
+note or something like that.
+
+28
+00:01:57,480 --> 00:02:00,860
+And we might also want to be able to add more than one button as well.
+
+29
+00:02:01,040 --> 00:02:05,240
+So let's create a slot here where we can insert any button that we want.
+
+30
+00:02:05,450 --> 00:02:12,890
+So I'm just going to get rid of this button and instead will add a slot and we'll make this a named
+
+31
+00:02:12,950 --> 00:02:13,380
+slot.
+
+32
+00:02:13,400 --> 00:02:18,110
+So a lot of name attribute and set that two buttons, save that.
+
+33
+00:02:18,470 --> 00:02:24,530
+Now let's use this new component on our notes view and get it all working that before we then use it
+
+34
+00:02:24,530 --> 00:02:26,120
+on our new edit page.
+
+35
+00:02:26,930 --> 00:02:33,950
+So let's jump to view notes dot view and we'll import this component that we just created that after
+
+36
+00:02:33,950 --> 00:02:34,940
+our notes import.
+
+37
+00:02:35,420 --> 00:02:43,370
+So I'll duplicate this line and we're going to import add edit note from slash component slash notes
+
+38
+00:02:43,370 --> 00:02:46,550
+slash edit notes that view.
+
+39
+00:02:47,030 --> 00:02:47,690
+Save that.
+
+40
+00:02:47,960 --> 00:02:48,950
+Now let's scroll up.
+
+41
+00:02:50,160 --> 00:02:52,800
+I will comments how all of this card element.
+
+42
+00:02:55,060 --> 00:02:57,640
+And then outputs are a new component.
+
+43
+00:02:57,820 --> 00:03:02,050
+Add edit notes save the.
+
+44
+00:03:04,380 --> 00:03:06,870
+We see the text area, but we don't see the button.
+
+45
+00:03:07,170 --> 00:03:09,420
+We need to press the button into a slot.
+
+46
+00:03:10,290 --> 00:03:17,610
+So inside this odd edit note component, we can add a template tag and we can either at the dash slot
+
+47
+00:03:17,970 --> 00:03:21,720
+colon buttons, which is the name of the slot that we set up on.
+
+48
+00:03:21,960 --> 00:03:23,100
+Edit Note View here.
+
+49
+00:03:24,470 --> 00:03:27,710
+Or we can shorthand this by just doing hash buttons.
+
+50
+00:03:28,070 --> 00:03:29,660
+We can now place outputs and it here.
+
+51
+00:03:29,900 --> 00:03:32,990
+So let's grab that from the markup that we come and sit out.
+
+52
+00:03:33,170 --> 00:03:41,180
+So the button is here, so I'll copy that, paste it in here and save that.
+
+53
+00:03:41,780 --> 00:03:47,360
+Everything looks correctly now, but it's not working because this text area, which is now coming from
+
+54
+00:03:47,360 --> 00:03:54,560
+our new reusable component, is no longer hooked up to this new note ref in our script section.
+
+55
+00:03:54,770 --> 00:03:56,120
+So let's fix that next.
+

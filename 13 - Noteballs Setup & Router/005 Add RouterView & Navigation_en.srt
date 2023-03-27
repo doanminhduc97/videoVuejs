@@ -1,0 +1,120 @@
+1
+00:00:01,060 --> 00:00:02,680
+Let me go to the slush.
+
+2
+00:00:02,890 --> 00:00:07,110
+We don't see of you notes component with this heading with the tax notes.
+
+3
+00:00:07,120 --> 00:00:11,710
+And that's because we need to add a roots of view component to our app is the route to view component
+
+4
+00:00:11,710 --> 00:00:14,500
+which determines where our routes will be displayed.
+
+5
+00:00:14,770 --> 00:00:18,290
+So let's jump to our route component source update view.
+
+6
+00:00:18,730 --> 00:00:24,100
+I'm actually just going to remove the script section, remove everything inside the template and remove
+
+7
+00:00:24,310 --> 00:00:26,650
+the style tag and all of the styles as well.
+
+8
+00:00:28,660 --> 00:00:29,350
+Save that.
+
+9
+00:00:29,530 --> 00:00:33,640
+We can now also delete all of the components in the source components folder.
+
+10
+00:00:33,880 --> 00:00:35,680
+So I'll select everything in here.
+
+11
+00:00:36,040 --> 00:00:37,480
+Right click on Delete.
+
+12
+00:00:38,660 --> 00:00:42,240
+And we see an arrow, but if we reload than the error disappears.
+
+13
+00:00:42,260 --> 00:00:46,240
+So now to display our roots, we just need to add a roots view component.
+
+14
+00:00:46,250 --> 00:00:48,650
+And we can do this in a case like this.
+
+15
+00:00:48,950 --> 00:00:57,290
+Roots a dash view all we can do it in Pascal case, which I'm going to do so roots a view save that
+
+16
+00:00:57,410 --> 00:00:59,870
+we can now see our notes root on the page.
+
+17
+00:00:59,960 --> 00:01:03,610
+And if we go to the path slash stats, we can see us.
+
+18
+00:01:03,620 --> 00:01:04,220
+That's for you.
+
+19
+00:01:04,250 --> 00:01:07,370
+Now, using the address bar to navigate isn't much fun.
+
+20
+00:01:07,400 --> 00:01:11,990
+So let's add some roots link components to our page so that we can navigate.
+
+21
+00:01:12,380 --> 00:01:18,980
+So above this route to view component, I'm going to add a roots, a link component inside that output,
+
+22
+00:01:18,980 --> 00:01:21,680
+the text notes, and then I'll duplicate that.
+
+23
+00:01:21,950 --> 00:01:22,550
+In this one.
+
+24
+00:01:22,550 --> 00:01:27,060
+We've got the text stats to determine where these roots links will go.
+
+25
+00:01:27,080 --> 00:01:30,680
+We can just add a two prop and set it to the path we want to go to.
+
+26
+00:01:30,710 --> 00:01:37,640
+So for the notes, you can just set this to slash and then for the stats you can just set this to slash
+
+27
+00:01:37,640 --> 00:01:38,300
+stats.
+
+28
+00:01:38,480 --> 00:01:39,290
+So let's save that.
+
+29
+00:01:40,340 --> 00:01:48,700
+I'll just add a space after the first one and a pipe and then another space so that we can now navigate
+
+30
+00:01:48,710 --> 00:01:49,230
+around.
+

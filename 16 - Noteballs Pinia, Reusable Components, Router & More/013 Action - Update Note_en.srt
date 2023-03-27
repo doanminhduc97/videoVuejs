@@ -1,0 +1,432 @@
+1
+00:00:00,360 --> 00:00:05,520
+When the user makes a change to this note and they click on Save, we want to update the content property
+
+2
+00:00:05,520 --> 00:00:10,140
+of the correct note in our state with the new content that they've typed in.
+
+3
+00:00:10,410 --> 00:00:14,130
+I'm first of all, let's just trigger a local method when we come the save button.
+
+4
+00:00:14,400 --> 00:00:21,210
+So I'm going to jump to view, edit, note dot view and I'm going to remove this console log here unless
+
+5
+00:00:21,210 --> 00:00:22,950
+John put it to our save note button.
+
+6
+00:00:23,100 --> 00:00:25,980
+And I'm also going to add a bit of margin between these buttons actually.
+
+7
+00:00:25,980 --> 00:00:33,240
+So on the console button a lot and dash three, let's say maybe two and that looks a bit better.
+
+8
+00:00:33,250 --> 00:00:36,170
+Now let's start a click on let's do this save note button.
+
+9
+00:00:36,180 --> 00:00:43,470
+So I click equals I will trigger a method called handle save clicked and let's go and create that method.
+
+10
+00:00:44,250 --> 00:00:46,530
+A lot of new comment here which says save clicked.
+
+11
+00:00:48,070 --> 00:00:56,680
+Sets about method handle save clicked so they equal to an arrow function on just log out handle save
+
+12
+00:00:57,040 --> 00:00:59,890
+clicks for now save that click on the button.
+
+13
+00:01:00,230 --> 00:01:01,570
+We can see that's being locked out.
+
+14
+00:01:01,750 --> 00:01:06,790
+So we're going to trigger an action in our store at this point to update the notes.
+
+15
+00:01:06,940 --> 00:01:08,550
+In our notes are right in the state.
+
+16
+00:01:08,560 --> 00:01:11,810
+So what information is that action going to need in order to do that?
+
+17
+00:01:11,830 --> 00:01:17,140
+Well, it's going to need the notes ID so that we can figure out which notes in the array to actually
+
+18
+00:01:17,140 --> 00:01:17,920
+update on.
+
+19
+00:01:17,920 --> 00:01:21,070
+It's also going to need the new content string as well.
+
+20
+00:01:21,080 --> 00:01:25,450
+So there's a couple of ways we could pass this information to an action in our store.
+
+21
+00:01:25,480 --> 00:01:27,590
+So we could set up an object.
+
+22
+00:01:27,910 --> 00:01:29,860
+We could call it payload or something like that.
+
+23
+00:01:30,670 --> 00:01:35,410
+We could add a couple of properties today so ID, which we can again get from our root properties.
+
+24
+00:01:35,410 --> 00:01:42,450
+So root stop, params ID and then a content property which we can just grab from this note content ref
+
+25
+00:01:42,520 --> 00:01:44,340
+which is bound to the text area.
+
+26
+00:01:44,350 --> 00:01:46,830
+So notes content value.
+
+27
+00:01:46,840 --> 00:01:51,670
+And then we could just pass this whole payload as a single parameter to an action.
+
+28
+00:01:51,700 --> 00:01:56,640
+And in fact, with the UX, this was the only way that we could do this, because actions in view X
+
+29
+00:01:56,680 --> 00:01:58,390
+can only accept one parameter.
+
+30
+00:01:58,450 --> 00:02:02,460
+However, actions in Pioneer can actually accept multiple parameters.
+
+31
+00:02:02,470 --> 00:02:07,670
+So the other way to do this is just to send the ID and the content as two separate parameters.
+
+32
+00:02:07,690 --> 00:02:12,700
+So in this case, I think we should do it that way because it will make our action a bit more clear,
+
+33
+00:02:12,970 --> 00:02:16,240
+because we'll be able to see exactly what's being passed in here.
+
+34
+00:02:16,360 --> 00:02:17,760
+So let's set up this action.
+
+35
+00:02:17,770 --> 00:02:24,400
+So we'll create a new action called Update Notes, and this is going to receive an ID parameter on a
+
+36
+00:02:24,400 --> 00:02:25,720
+content parameter.
+
+37
+00:02:26,410 --> 00:02:27,760
+Now let's just log these out.
+
+38
+00:02:27,940 --> 00:02:34,520
+So a log out ID and then we'll log out the content parameter as well.
+
+39
+00:02:34,540 --> 00:02:35,200
+Save that.
+
+40
+00:02:35,530 --> 00:02:37,540
+And now let's trigger that action here.
+
+41
+00:02:37,660 --> 00:02:43,570
+And our action is going to be store notes, dot update notes, because this is the name we gave our
+
+42
+00:02:43,570 --> 00:02:44,410
+action here.
+
+43
+00:02:44,900 --> 00:02:48,370
+And this is going to expect an ID parameter on the content parameter.
+
+44
+00:02:48,940 --> 00:02:54,390
+So the ID we're going to grab from our root parameters, root stopped Ram's ID and then the content
+
+45
+00:02:54,400 --> 00:02:59,410
+we're just going to grab from this no content ref, which is bound to the text area so we can get that
+
+46
+00:02:59,410 --> 00:03:01,720
+from note content dot value.
+
+47
+00:03:01,750 --> 00:03:06,140
+Now let's save that and see if these two parameters are getting through to this action.
+
+48
+00:03:06,980 --> 00:03:07,540
+Reload.
+
+49
+00:03:08,560 --> 00:03:09,460
+Change the content.
+
+50
+00:03:09,460 --> 00:03:13,180
+Click on Save and yet we can see those being locked out by our action.
+
+51
+00:03:13,210 --> 00:03:17,560
+You see the ID being locked out and the updated content being locked out as well.
+
+52
+00:03:17,800 --> 00:03:21,430
+So now we just need to update the correct notes in our state.
+
+53
+00:03:21,520 --> 00:03:27,010
+And one way we could do that is by first figuring out the index or the position of the notes in our
+
+54
+00:03:27,010 --> 00:03:29,470
+array, by using the find index method.
+
+55
+00:03:29,470 --> 00:03:35,890
+And then we can just simply update the notes in our right at that position and update the content property.
+
+56
+00:03:37,090 --> 00:03:41,710
+So first of all, let's just grab the index of the notes that we want to update.
+
+57
+00:03:41,740 --> 00:03:47,440
+So we'll set up a variable called index, and then we're going to fire the find index method on our
+
+58
+00:03:47,440 --> 00:03:47,800
+notes.
+
+59
+00:03:47,830 --> 00:03:48,160
+Right.
+
+60
+00:03:48,520 --> 00:03:50,890
+And we can get to our notes about this stop notes.
+
+61
+00:03:51,070 --> 00:03:54,940
+So we can do this stock notes, dot find index.
+
+62
+00:03:55,030 --> 00:04:00,880
+And again, we'll use note as our placeholder as it's looping through our array set that equal to an
+
+63
+00:04:00,880 --> 00:04:09,580
+arrow function and we want to return the index of the notes where the notes ID is equal to this idea
+
+64
+00:04:09,580 --> 00:04:12,940
+that we're passing to this action, so equal to it.
+
+65
+00:04:13,360 --> 00:04:18,850
+And actually, I think we can just shorthand this by removing these curly braces and the word return.
+
+66
+00:04:19,959 --> 00:04:21,459
+Let's just see if that works.
+
+67
+00:04:22,330 --> 00:04:28,390
+And also I'll do the same to this filter down here can shorthand this by removing the parentheses return
+
+68
+00:04:28,390 --> 00:04:30,010
+on this closing parentheses.
+
+69
+00:04:30,040 --> 00:04:32,650
+Since we're only firing one line here and here.
+
+70
+00:04:32,680 --> 00:04:35,350
+So let's just log out this index and see if that's working.
+
+71
+00:04:36,070 --> 00:04:36,910
+Index.
+
+72
+00:04:38,290 --> 00:04:38,910
+Say that.
+
+73
+00:04:39,580 --> 00:04:42,640
+Reload the page and change it and click on Save.
+
+74
+00:04:43,090 --> 00:04:48,220
+Yeah, we can see that index is set to one here, which is correct, because that's a second note.
+
+75
+00:04:48,430 --> 00:04:49,810
+And I could jump back to the first.
+
+76
+00:04:49,810 --> 00:04:51,580
+Now make a change and click Save.
+
+77
+00:04:52,330 --> 00:04:52,890
+Let me see.
+
+78
+00:04:52,900 --> 00:04:54,730
+Index zero being logged out.
+
+79
+00:04:55,120 --> 00:04:55,480
+Okay.
+
+80
+00:04:55,480 --> 00:05:00,490
+So now that we have the index of the notes that we want to update in our notes array, we can now update
+
+81
+00:05:00,490 --> 00:05:01,000
+the notes.
+
+82
+00:05:01,150 --> 00:05:03,370
+So let's scroll down to our update.
+
+83
+00:05:03,370 --> 00:05:04,870
+Note action.
+
+84
+00:05:05,080 --> 00:05:11,380
+When I get rid of these console dot looks to access our notes array, we can just do this stop notes
+
+85
+00:05:11,380 --> 00:05:17,970
+and then to access the notes at the position of index, we can just do square brackets index.
+
+86
+00:05:18,790 --> 00:05:23,980
+Then we want to access the concept property and set it to this content that we're passing through to
+
+87
+00:05:23,980 --> 00:05:24,710
+this action.
+
+88
+00:05:24,730 --> 00:05:30,550
+So set that equal to content and remove this console.log and let's see if that's working.
+
+89
+00:05:30,880 --> 00:05:31,830
+So I'll reload.
+
+90
+00:05:32,440 --> 00:05:33,310
+Make a change.
+
+91
+00:05:33,640 --> 00:05:34,840
+New content.
+
+92
+00:05:36,190 --> 00:05:37,050
+Click on Save.
+
+93
+00:05:37,210 --> 00:05:42,070
+Now, if we click on Cancel, we can see that the first note has been updated with the new content.
+
+94
+00:05:42,190 --> 00:05:44,140
+Let's make sure it works on the second note as well.
+
+95
+00:05:44,410 --> 00:05:45,160
+Click on edit.
+
+96
+00:05:46,030 --> 00:05:47,180
+Add some new content.
+
+97
+00:05:47,290 --> 00:05:48,130
+Click on Save.
+
+98
+00:05:48,160 --> 00:05:49,060
+Click on Cancel.
+
+99
+00:05:49,720 --> 00:05:51,850
+And this note has been updated as well.
+
+100
+00:05:52,030 --> 00:05:56,680
+However, when the user does click Save on this button, we don't want to leave them hanging on this
+
+101
+00:05:56,680 --> 00:05:57,190
+page.
+
+102
+00:05:57,490 --> 00:06:00,420
+We really want to redirect them back to the notes page.
+
+103
+00:06:00,430 --> 00:06:01,750
+So let's do that next.
+
+104
+00:06:02,140 --> 00:06:06,710
+But before we move on, I've just realized there's another return statement here that we can show.
+
+105
+00:06:07,420 --> 00:06:12,610
+So I'm going to remove this curly brace in our delete note action and return.
+
+106
+00:06:12,810 --> 00:06:14,950
+I don't remove the closing Kelly Price as well.
+
+107
+00:06:15,070 --> 00:06:19,420
+Let's have a look at the up note action so that one's okay as it is.
+
+108
+00:06:20,080 --> 00:06:21,280
+Okay, let's save that.
+

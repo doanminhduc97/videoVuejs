@@ -1,0 +1,248 @@
+1
+00:00:01,210 --> 00:00:07,750
+So we can now create, read and delete notes, but we can't currently update a notes.
+
+2
+00:00:07,870 --> 00:00:14,740
+So that's complete crud set up create read update delete by creating a new edit note page which will
+
+3
+00:00:14,740 --> 00:00:17,200
+allow us to edit a note and save it.
+
+4
+00:00:17,560 --> 00:00:23,110
+For this, we're going to be adding a new action to any store and also our first getter.
+
+5
+00:00:23,350 --> 00:00:27,520
+But for now, let's just set up a new route page for editing a note.
+
+6
+00:00:27,910 --> 00:00:34,510
+So when it jump to our Explorer and in the Views folder, I'm going to create a new file called View.
+
+7
+00:00:34,540 --> 00:00:35,710
+Edit Note.
+
+8
+00:00:35,890 --> 00:00:40,810
+Don't view a lot of template tags to begin with.
+
+9
+00:00:40,810 --> 00:00:46,330
+I'm just going to get a diff with a class of edit dash notes and inside that a lot of hate one tag which
+
+10
+00:00:46,330 --> 00:00:49,660
+just says edit notes on save that.
+
+11
+00:00:49,690 --> 00:00:51,510
+And now we need to set up our route.
+
+12
+00:00:51,520 --> 00:00:55,450
+So let's jump to source router and index dot jess.
+
+13
+00:00:56,080 --> 00:01:02,350
+A lot of new route here after the few notes route when to select all that and press alt shift and dow
+
+14
+00:01:02,380 --> 00:01:04,930
+shortcut might be different for you to duplicate that.
+
+15
+00:01:04,930 --> 00:01:11,110
+I will set the path to edit notes in order to follow this route to know which notes that we're going
+
+16
+00:01:11,110 --> 00:01:13,660
+to actually edit load into the page.
+
+17
+00:01:13,660 --> 00:01:16,810
+Then we're going to need to pass a routes parameter to this path.
+
+18
+00:01:16,900 --> 00:01:22,420
+So to do that, we can just add slush and then colon and then the name of a parameter and we could just
+
+19
+00:01:22,420 --> 00:01:23,020
+call it ID.
+
+20
+00:01:23,290 --> 00:01:29,650
+So in other words, we could visit the edit, note slash ID one and then we can grab that ID I'd want
+
+21
+00:01:29,890 --> 00:01:33,370
+on this view and then use it to grab the appropriate notes.
+
+22
+00:01:33,730 --> 00:01:38,710
+In our notes are right in our state, in our store, and then display the contents of this notes in
+
+23
+00:01:38,710 --> 00:01:42,310
+a text area on this page so that we can then edit it and save it.
+
+24
+00:01:42,550 --> 00:01:44,230
+Let's change the name of this route.
+
+25
+00:01:44,230 --> 00:01:51,790
+To edit Dash notes, we need to import our new component so we'll duplicate this import view notes line
+
+26
+00:01:51,820 --> 00:02:00,280
+and replace view notes with view edit notes and then I'll copy this name view edit now paste it in here
+
+27
+00:02:00,460 --> 00:02:01,420
+so I'll save that.
+
+28
+00:02:01,960 --> 00:02:09,789
+We should now be able to visit parts such as edit notes, slash ID one and get to our new edit note
+
+29
+00:02:09,789 --> 00:02:10,330
+page.
+
+30
+00:02:10,780 --> 00:02:15,340
+Okay, now we need to be able to get to this page without having to type in the address bar.
+
+31
+00:02:15,970 --> 00:02:18,160
+So let's hook up these edit buttons.
+
+32
+00:02:18,640 --> 00:02:23,590
+I'm just going to close everything here except note dot view and let's find our edit button and that's
+
+33
+00:02:23,590 --> 00:02:23,890
+here.
+
+34
+00:02:24,790 --> 00:02:29,120
+I'm going to break this up onto new lines and then split the attributes on the opening text.
+
+35
+00:02:29,410 --> 00:02:32,530
+And we can actually just change this into a routes of view component.
+
+36
+00:02:36,690 --> 00:02:37,920
+Instead of an attack.
+
+37
+00:02:38,070 --> 00:02:40,880
+So let's rename the tag to root a link.
+
+38
+00:02:40,950 --> 00:02:46,710
+Make sure the closing tag is renamed as well, and we can now just add a two to this to tell it where
+
+39
+00:02:46,710 --> 00:02:47,220
+to go.
+
+40
+00:02:47,250 --> 00:02:53,040
+So I'm going to use a template string to do this using tactics so that we can output the ID and we want
+
+41
+00:02:53,040 --> 00:02:59,490
+to go to the path slash edit note which we set up in our route to file and then slash and then we'll
+
+42
+00:02:59,490 --> 00:03:03,570
+use dollar curly braces to output the ID on again.
+
+43
+00:03:03,570 --> 00:03:09,750
+We're passing the note objects down to this note dot view component using this notes so we can get access
+
+44
+00:03:09,750 --> 00:03:13,440
+to the ID, props notes, the ID or in the template.
+
+45
+00:03:13,440 --> 00:03:14,850
+Just note the ID.
+
+46
+00:03:15,120 --> 00:03:18,930
+So in here we can just put notes Dot's ID and let's save that.
+
+47
+00:03:19,950 --> 00:03:21,810
+See if these edit buttons are working.
+
+48
+00:03:21,960 --> 00:03:25,690
+Click on the first edit button on yet the path edit note slash.
+
+49
+00:03:25,710 --> 00:03:32,280
+I'd want to jump back click on the second edit button and we're now on the path edit note slash ID too.
+
+50
+00:03:32,760 --> 00:03:39,780
+We can access this root parameter which we've named ID in our route to file here in our template by
+
+51
+00:03:39,780 --> 00:03:44,640
+using the dollar route object, which we could also use the options API.
+
+52
+00:03:44,970 --> 00:03:49,680
+So let's just spit out this route parameter ID on the page and see if that's working.
+
+53
+00:03:49,980 --> 00:03:52,230
+So we want to open up our new view.
+
+54
+00:03:52,230 --> 00:03:53,820
+Edit Note Component.
+
+55
+00:03:53,820 --> 00:03:57,690
+So source views view edit note and let's change this.
+
+56
+00:03:57,690 --> 00:04:07,380
+Heading to edit notes with on ID of and then we'll do double Kelly braces and to access our routes information
+
+57
+00:04:07,380 --> 00:04:14,250
+we cannot route and then to access our routes parameters we can do doc params and then to access our
+
+58
+00:04:14,310 --> 00:04:18,630
+ID parameter which we set up here, we can just do dot IP.
+
+59
+00:04:18,630 --> 00:04:22,019
+So hopefully this will be spitting out our notes ID on the page now.
+
+60
+00:04:22,019 --> 00:04:29,250
+So let's save that reload and yeah, if we're at the path edit note slash I'd say we see ID two on the
+
+61
+00:04:29,250 --> 00:04:35,700
+page and if we click on the first edit button and we go to the path edit note slash 81, we now see
+
+62
+00:04:35,700 --> 00:04:37,230
+ID one on the page.
+

@@ -1,0 +1,156 @@
+1
+00:00:01,200 --> 00:00:06,750
+That sort of farm to the top of our notes view with a text area and a button that we can use to add
+
+2
+00:00:06,750 --> 00:00:07,530
+a new note.
+
+3
+00:00:07,950 --> 00:00:09,420
+So back to the ball, Messi.
+
+4
+00:00:09,570 --> 00:00:10,800
+I'm going to go too far.
+
+5
+00:00:10,980 --> 00:00:18,300
+And General, I'm going to scroll down to complete form example, show the code and all I'm going to
+
+6
+00:00:18,300 --> 00:00:21,830
+grab here is from this text area down to these buttons.
+
+7
+00:00:21,870 --> 00:00:27,540
+So let's scroll down the code and there's a text area and we do want this did with the class of field
+
+8
+00:00:27,540 --> 00:00:28,280
+that's around it.
+
+9
+00:00:28,290 --> 00:00:29,610
+So I'll select from there.
+
+10
+00:00:30,510 --> 00:00:33,000
+To the step down here with the two buttons inside it.
+
+11
+00:00:33,030 --> 00:00:33,660
+Copy that.
+
+12
+00:00:34,260 --> 00:00:37,160
+And we'll paste this above our notes.
+
+13
+00:00:37,200 --> 00:00:39,660
+Well, still inside this day with the class of notes.
+
+14
+00:00:39,990 --> 00:00:43,980
+So a paste that here indents it a little bit and save that.
+
+15
+00:00:44,400 --> 00:00:47,760
+Now I'm going to remove this label here with the text message, which is here.
+
+16
+00:00:48,060 --> 00:00:51,200
+So get rid of that and I'm going to get rid of this checkbox here.
+
+17
+00:00:51,220 --> 00:00:53,100
+Does this step here with the class of fields?
+
+18
+00:00:53,550 --> 00:00:54,470
+So we'll get rid of that.
+
+19
+00:00:54,480 --> 00:00:57,870
+We'll get rid of these two radio buttons, which is this div here.
+
+20
+00:00:59,400 --> 00:01:00,120
+Save that.
+
+21
+00:01:00,210 --> 00:01:05,310
+Now I'm going to surround the text area and the buttons in a card component with a background color.
+
+22
+00:01:05,550 --> 00:01:07,350
+So I'll stick that up here.
+
+23
+00:01:07,380 --> 00:01:10,350
+So a lot of tape with the class of card to give it a background color.
+
+24
+00:01:10,350 --> 00:01:17,550
+Without it, class of has background success dark and I'm going to select these two Davis to the class
+
+25
+00:01:17,550 --> 00:01:25,350
+of fields cut those paste them inside this div save that we need to add a bit of padding here so a class
+
+26
+00:01:25,350 --> 00:01:29,580
+of P does for give it a bit padding and we need a bit of margin at the bottom.
+
+27
+00:01:29,580 --> 00:01:33,870
+So a lot of class and B margin bottom dash five save thought.
+
+28
+00:01:33,900 --> 00:01:35,670
+Now I'm going to remove this cancel button.
+
+29
+00:01:35,910 --> 00:01:40,020
+So I'll remove this tape with the class of control which has the console button inside it.
+
+30
+00:01:40,260 --> 00:01:43,710
+Save that and I want to pull this button over to the right hand side.
+
+31
+00:01:43,920 --> 00:01:50,250
+You can do that by adding a class of is dash grouped dash right to this day for the class of field save
+
+32
+00:01:50,250 --> 00:01:56,520
+that I want to change the color and the text of this button is going to break it up onto multiple lines.
+
+33
+00:01:56,660 --> 00:02:00,660
+I'll change the text inside it to add new notes.
+
+34
+00:02:00,750 --> 00:02:07,950
+Save that I will change the background color by adding a class of has dash background dash success.
+
+35
+00:02:08,250 --> 00:02:08,910
+Save that.
+
+36
+00:02:09,419 --> 00:02:14,520
+I'll finally let's change the placeholder on this text area and in fact I'm going to change this into
+
+37
+00:02:14,520 --> 00:02:18,870
+a self closing tag like that and split the attributes.
+
+38
+00:02:19,020 --> 00:02:25,770
+I will set the placeholder to add a new note, save that this is looking pretty good on desktop.
+
+39
+00:02:27,590 --> 00:02:29,120
+It's looking pretty good on Mobile, too.
+

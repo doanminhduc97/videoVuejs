@@ -1,0 +1,116 @@
+1
+00:00:01,130 --> 00:00:05,480
+Now let's create the design for our notes using bonus card component.
+
+2
+00:00:05,510 --> 00:00:10,280
+So I'm going to jump on over to the bonus site and go to components on card.
+
+3
+00:00:10,330 --> 00:00:11,540
+Our full screen, this is EQ.
+
+4
+00:00:11,570 --> 00:00:20,750
+And I'm going to scroll down to this example here, which has these buttons at the bottom which we can
+
+5
+00:00:20,750 --> 00:00:24,020
+use to add the ability to edit and delete a note.
+
+6
+00:00:24,170 --> 00:00:30,410
+So I'm going to copy this example here by clicking on copy, and then I'll jump back to note bubbles.
+
+7
+00:00:30,440 --> 00:00:32,060
+I'm going to add this to our notes view.
+
+8
+00:00:32,060 --> 00:00:38,330
+So we're going to go to source views and view notes dot view and I'll paste that inside this diff over
+
+9
+00:00:38,330 --> 00:00:44,810
+the top of this H1, indent it a little bit and save that and I'm going to get rid of this head at the
+
+10
+00:00:44,810 --> 00:00:45,230
+top.
+
+11
+00:00:45,260 --> 00:00:46,850
+So that's this header element here.
+
+12
+00:00:47,300 --> 00:00:49,630
+So we'll get rid of that, save that.
+
+13
+00:00:49,640 --> 00:00:51,980
+And I'm just going to enable word by default.
+
+14
+00:00:52,010 --> 00:01:00,470
+So I'm going to go to code preferences and settings, search for word wrap and set that to on by default.
+
+15
+00:01:00,830 --> 00:01:01,490
+That's better.
+
+16
+00:01:01,610 --> 00:01:04,849
+Now I'm going to get rid of everything inside this div with a class of content.
+
+17
+00:01:05,900 --> 00:01:06,920
+So get rid of that.
+
+18
+00:01:08,390 --> 00:01:13,640
+Spits out some room by just typing in lower and then hitting enter should see this abbreviation.
+
+19
+00:01:13,790 --> 00:01:14,480
+Save that.
+
+20
+00:01:14,780 --> 00:01:19,880
+I'll just get rid of the save button cause we're only going to need an edit on the delete button.
+
+21
+00:01:20,120 --> 00:01:20,750
+Save that.
+
+22
+00:01:20,960 --> 00:01:24,200
+Let's just see how this will look with multiple cards on.
+
+23
+00:01:24,200 --> 00:01:28,850
+A quick trick to do this is to just add av4 to the parent diff.
+
+24
+00:01:29,240 --> 00:01:33,530
+So before that we can just do I in three to spit out three of these.
+
+25
+00:01:33,620 --> 00:01:37,280
+And you can see we need a little bit of space between each note.
+
+26
+00:01:37,460 --> 00:01:44,470
+So a lot of class to this day for the class of card of and B for margin button dash for save that these
+
+27
+00:01:44,510 --> 00:01:45,290
+are looking pretty good.
+
+28
+00:01:45,470 --> 00:01:49,550
+Let's just make sure they look okay on a big screen or on a small screen.
+
+29
+00:01:49,670 --> 00:01:50,390
+Yeah, pretty good.
+

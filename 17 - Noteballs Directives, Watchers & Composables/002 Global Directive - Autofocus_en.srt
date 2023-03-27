@@ -1,0 +1,204 @@
+1
+00:00:00,360 --> 00:00:03,810
+Now let's say we have an input on our stats page.
+
+2
+00:00:03,930 --> 00:00:05,570
+Let's jump to the stats page.
+
+3
+00:00:05,580 --> 00:00:10,380
+So views view stats dot view a collapse table.
+
+4
+00:00:10,410 --> 00:00:16,710
+I will add an input after this and I'll set the type to text and we'll give this a placeholder.
+
+5
+00:00:16,980 --> 00:00:19,770
+Do you love note balls?
+
+6
+00:00:20,250 --> 00:00:24,310
+Save that and jump to our stats page to make this look a bit prettier.
+
+7
+00:00:24,330 --> 00:00:28,480
+A lot of class of input, which is from Bulma and that's better.
+
+8
+00:00:28,500 --> 00:00:33,570
+So let's say we also want to auto focus this input when this page has loaded.
+
+9
+00:00:33,660 --> 00:00:35,090
+Well, that's not currently going to work.
+
+10
+00:00:35,100 --> 00:00:37,830
+If we add this v auto focus directive here.
+
+11
+00:00:37,890 --> 00:00:39,270
+Save that and reload.
+
+12
+00:00:39,570 --> 00:00:42,240
+If we look at our console we can see an error.
+
+13
+00:00:43,020 --> 00:00:45,660
+Cannot read properties of undefined reading deep.
+
+14
+00:00:46,990 --> 00:00:52,300
+And that's because this the auto focus doesn't exist within the context of this component view.
+
+15
+00:00:52,300 --> 00:00:53,230
+Start, stop view.
+
+16
+00:00:53,470 --> 00:00:59,230
+It only exists on the edit note top view component where we've set it up here.
+
+17
+00:00:59,680 --> 00:01:00,880
+So let's jump back to view.
+
+18
+00:01:00,880 --> 00:01:01,720
+Start, stop view.
+
+19
+00:01:02,080 --> 00:01:04,420
+Remove this the auto focus directive.
+
+20
+00:01:04,720 --> 00:01:10,960
+Save that and jump back to our notes page and add edit note up view.
+
+21
+00:01:11,230 --> 00:01:15,160
+Let's make this directive, a global directive that we can use anywhere.
+
+22
+00:01:15,220 --> 00:01:20,590
+So first of all, let's create a new folder in our source folder where all of our directives can live.
+
+23
+00:01:20,740 --> 00:01:26,470
+So going to right click the source folder, click on new folder, create a folder called Directives.
+
+24
+00:01:27,220 --> 00:01:31,480
+And inside that, we're going to create a new file called the Auto Focus.
+
+25
+00:01:32,770 --> 00:01:35,710
+We might as well give it the same name as our constant name.
+
+26
+00:01:35,860 --> 00:01:38,410
+Now let's jump to add edit note dot view.
+
+27
+00:01:38,590 --> 00:01:40,300
+Select this constant and cut it.
+
+28
+00:01:40,760 --> 00:01:43,840
+Let's also remove this comment and save that.
+
+29
+00:01:43,960 --> 00:01:48,580
+Now let's jump to our new auto focus file and paste that directive.
+
+30
+00:01:48,580 --> 00:01:54,670
+And all we need to do is export this so that it can be imported from our components, so we can just
+
+31
+00:01:54,670 --> 00:01:56,470
+start export like that.
+
+32
+00:01:56,590 --> 00:02:01,540
+Save that now if we want to add edit knocked out view, we can just import this directive.
+
+33
+00:02:01,570 --> 00:02:03,550
+So let's jump up to our imports.
+
+34
+00:02:03,710 --> 00:02:05,230
+We can just do imports.
+
+35
+00:02:05,260 --> 00:02:06,430
+Curly braces.
+
+36
+00:02:06,430 --> 00:02:11,740
+The auto focus from slash directives.
+
+37
+00:02:11,740 --> 00:02:15,670
+Slash the auto focus that I know.
+
+38
+00:02:15,670 --> 00:02:19,330
+We just need to add the directive to the text area which we already have done.
+
+39
+00:02:19,330 --> 00:02:24,190
+So this should hopefully be working now and we can see when we reload the page it still auto focuses
+
+40
+00:02:24,190 --> 00:02:28,600
+the text area, except now it's using this global directive that we created.
+
+41
+00:02:28,630 --> 00:02:31,510
+So let's use the same global directive on our stats page.
+
+42
+00:02:31,630 --> 00:02:33,970
+So let's jump to view, start, stop view.
+
+43
+00:02:34,210 --> 00:02:35,800
+We need to import the directive.
+
+44
+00:02:35,800 --> 00:02:40,780
+So I'll just jump back to edit note dot view and copy the import statement.
+
+45
+00:02:40,780 --> 00:02:41,590
+Job to view.
+
+46
+00:02:41,590 --> 00:02:42,550
+Stop, stop view.
+
+47
+00:02:42,820 --> 00:02:43,660
+Paste that here.
+
+48
+00:02:43,750 --> 00:02:46,180
+Save that and we can now use that here as well.
+
+49
+00:02:46,210 --> 00:02:48,400
+So let's add it to this import we just created.
+
+50
+00:02:48,400 --> 00:02:55,900
+So V dash auto focus save that reload and we can see this import on the start page is now auto focus
+
+51
+00:02:55,900 --> 00:02:56,470
+as well.
+

@@ -1,0 +1,296 @@
+1
+00:00:00,420 --> 00:00:05,970
+When the user clicks on this edit button, they're taken to this new edit note page and they're going
+
+2
+00:00:05,970 --> 00:00:12,600
+to expect the text of the note that they just clicked on this text here to be loaded into this text
+
+3
+00:00:12,600 --> 00:00:13,080
+area.
+
+4
+00:00:13,110 --> 00:00:16,640
+And we can do this by using a getter in our opinion store.
+
+5
+00:00:16,650 --> 00:00:21,870
+So what we're going to need to do is grab the ID of the current note from our root parameters, which
+
+6
+00:00:21,870 --> 00:00:28,680
+we can see in our address bar, hit ID one, and then send that ID to a getter in our store, which
+
+7
+00:00:28,680 --> 00:00:34,650
+will then retrieve the correct note from our notes array in our store based on that ID and return it
+
+8
+00:00:34,650 --> 00:00:35,760
+to this view.
+
+9
+00:00:35,760 --> 00:00:42,270
+Edit Note component where we can then assign it to this note content ref which is bound to the text
+
+10
+00:00:42,270 --> 00:00:47,190
+area, thus populating the text area with the text from the correct note.
+
+11
+00:00:47,490 --> 00:00:53,250
+But to begin with, let's just set up a really simple getter which just gets the content of the first
+
+12
+00:00:53,250 --> 00:00:54,480
+note in our array.
+
+13
+00:00:54,840 --> 00:00:57,750
+So let's jump to our store file, store notes, stock.
+
+14
+00:00:57,750 --> 00:01:04,830
+JJ's in the stores folder and we'll scroll down and to add some guesses we just need to add a gets objects
+
+15
+00:01:04,830 --> 00:01:06,420
+up to this actions object.
+
+16
+00:01:09,000 --> 00:01:10,890
+We can place all of our guesses in here.
+
+17
+00:01:11,100 --> 00:01:15,810
+And so to get to that we just had a property with the name of the get to that we want we could call
+
+18
+00:01:15,810 --> 00:01:25,260
+it get note consent and then we assign this property to a method like this so that this getter can get
+
+19
+00:01:25,260 --> 00:01:26,940
+access to US state.
+
+20
+00:01:27,180 --> 00:01:29,730
+We need to pass the state into this.
+
+21
+00:01:29,730 --> 00:01:31,770
+Gets like this and gets us.
+
+22
+00:01:31,770 --> 00:01:35,490
+Always need to return something just like computed properties.
+
+23
+00:01:35,610 --> 00:01:43,440
+So for now, let's just return the content from the first notes in our notes array in our state so we
+
+24
+00:01:43,440 --> 00:01:50,490
+can grab this from state dot notes and then square brackets zero to grab the first no dot content.
+
+25
+00:01:50,700 --> 00:01:54,060
+Let's get the content of that first note so it gets up.
+
+26
+00:01:54,420 --> 00:02:02,130
+All we need to do is return state dot notes, square brackets, zero to grab the first one dot content
+
+27
+00:02:02,370 --> 00:02:03,300
+and save that.
+
+28
+00:02:03,510 --> 00:02:06,780
+And we should now be able to use this getter anywhere in our app.
+
+29
+00:02:06,780 --> 00:02:08,910
+So let's use it on view edit note dot view.
+
+30
+00:02:09,389 --> 00:02:19,110
+We need to import our store so we need to do import use store notes from slash stores, slash store
+
+31
+00:02:19,140 --> 00:02:24,300
+notes that we need to assign this to a constant so that we can access it.
+
+32
+00:02:24,780 --> 00:02:31,590
+So a lot of new comment which says Store, I will set up a constant called store notes set that equal
+
+33
+00:02:31,590 --> 00:02:38,610
+to use store notes parentheses and actually let's move this up a bit to cut that paste after our imports.
+
+34
+00:02:38,730 --> 00:02:44,280
+And now we can use the getter in our store to grab that content from the first note on assign it to
+
+35
+00:02:44,280 --> 00:02:48,180
+this note content ref, which should then update the text area.
+
+36
+00:02:48,750 --> 00:02:54,750
+So to access our getter we can just do store notes dot and then the name of our getter which is get
+
+37
+00:02:54,750 --> 00:02:56,010
+notes content.
+
+38
+00:02:56,340 --> 00:03:02,370
+We just want to assign this to this note content ref so we can just do notes content dot value equals
+
+39
+00:03:02,370 --> 00:03:02,820
+like that.
+
+40
+00:03:02,820 --> 00:03:04,590
+So let's save that now reload.
+
+41
+00:03:04,890 --> 00:03:06,050
+That doesn't seem to be working.
+
+42
+00:03:06,060 --> 00:03:08,580
+Let's have a look in our console, not seeing any errors.
+
+43
+00:03:08,580 --> 00:03:09,990
+Let's have a look at a still file.
+
+44
+00:03:10,080 --> 00:03:11,460
+So make sure the app is running.
+
+45
+00:03:11,670 --> 00:03:12,600
+Yeah, it's running.
+
+46
+00:03:12,630 --> 00:03:14,700
+Oh, it help if we were actually on the edit page.
+
+47
+00:03:14,700 --> 00:03:16,230
+So let's click on an edit bottom.
+
+48
+00:03:16,590 --> 00:03:22,110
+Yeah, we can see the text from the first notes is being loaded into this text area.
+
+49
+00:03:22,110 --> 00:03:24,920
+However, we don't just want to grab the text from the first notes.
+
+50
+00:03:24,930 --> 00:03:25,260
+Right.
+
+51
+00:03:29,950 --> 00:03:35,680
+We need to be able to grab the content from the notes based on the idea of the note that they just clicked
+
+52
+00:03:35,680 --> 00:03:35,860
+on.
+
+53
+00:03:36,280 --> 00:03:41,530
+So if we click on edit on the second note, then we expect to see this notes content being loaded into
+
+54
+00:03:41,530 --> 00:03:41,890
+here.
+
+55
+00:03:41,920 --> 00:03:47,170
+So we can grab the ID that's being passed to this page using our root parameters.
+
+56
+00:03:47,200 --> 00:03:53,050
+And we saw earlier on that we can spit this out in our template using the route object.
+
+57
+00:03:54,310 --> 00:04:00,970
+So after this add edit notes, I'll just add a pre tag double curly braces and then dollar routes dot
+
+58
+00:04:00,970 --> 00:04:04,240
+params and then the name of our parameter.
+
+59
+00:04:04,430 --> 00:04:06,070
+I'd say that.
+
+60
+00:04:06,460 --> 00:04:12,490
+So we need to pass this ID to get to so that that gets i can get the content follow the correct note.
+
+61
+00:04:13,090 --> 00:04:19,899
+However, we need to do this in our script section and we can't access our root information in the script
+
+62
+00:04:19,899 --> 00:04:22,660
+section using the dollar route object.
+
+63
+00:04:23,050 --> 00:04:29,230
+When we're using the composition API, we need to use view routes as new use routes composable.
+
+64
+00:04:29,530 --> 00:04:39,430
+So let's just remove this pre tacked on after this import here, we'll import use route from view dash
+
+65
+00:04:39,520 --> 00:04:50,050
+router and then a lot of comment here which just says route to and we need to assign this user out composable
+
+66
+00:04:50,050 --> 00:04:51,640
+to constant or variable.
+
+67
+00:04:51,970 --> 00:04:57,880
+So we'll set up a contact called routes set that equal to use route parentheses.
+
+68
+00:04:58,450 --> 00:05:04,660
+We can now access the same routes information which we just spat out before using this route constant.
+
+69
+00:05:05,380 --> 00:05:09,550
+So let's just see if we can log out this route parameter, this ID parameter.
+
+70
+00:05:09,970 --> 00:05:14,650
+So after we set up this note content rest, we'll just log out.
+
+71
+00:05:15,760 --> 00:05:23,970
+So consolidate log routes dot params dot i d save that and yet we can see id two is being locked out.
+
+72
+00:05:23,980 --> 00:05:29,920
+And if we go back to the notes page and click on edit on the first note and we see ID one being locked
+
+73
+00:05:29,920 --> 00:05:30,190
+out.
+
+74
+00:05:30,220 --> 00:05:33,910
+So how can we pass the value of this ID to getter?
+

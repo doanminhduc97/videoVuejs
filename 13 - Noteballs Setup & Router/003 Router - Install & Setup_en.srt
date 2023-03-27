@@ -1,0 +1,152 @@
+1
+00:00:01,100 --> 00:00:06,770
+While there is an option in the bill to we just use to add the browser to our project automatically.
+
+2
+00:00:06,800 --> 00:00:12,530
+It's good to know how to do this manually, just in case you have to add browser to an existing view
+
+3
+00:00:12,530 --> 00:00:15,080
+three project which doesn't already have it set up.
+
+4
+00:00:15,110 --> 00:00:18,650
+So let's add the browser to our project and get it all set up.
+
+5
+00:00:18,740 --> 00:00:25,280
+So let's jump to our terminal and kill the dev process with control and say to install view out so we
+
+6
+00:00:25,280 --> 00:00:30,140
+can just run npm install view dash root at for.
+
+7
+00:00:30,200 --> 00:00:32,330
+Let's get the latest version of user.
+
+8
+00:00:33,920 --> 00:00:40,130
+And that's now installed so we can launch our project again with NPM, run dev, close the terminal
+
+9
+00:00:40,940 --> 00:00:42,450
+and see what the routes are to our app.
+
+10
+00:00:42,450 --> 00:00:44,600
+We need to jump to source and main.
+
+11
+00:00:45,080 --> 00:00:52,100
+Yes, we cannot be routed to our app by importing the create router method from view router and adding
+
+12
+00:00:52,100 --> 00:00:55,770
+it to this create chain with some options.
+
+13
+00:00:55,790 --> 00:01:04,739
+So first of all, after this first line, we need to import create router from view dash router and
+
+14
+00:01:04,760 --> 00:01:12,860
+we can now use this create router method to set up our router and we need to assign this to a constant.
+
+15
+00:01:13,610 --> 00:01:17,150
+So we'll create a constant called router and assign this to that.
+
+16
+00:01:17,540 --> 00:01:21,350
+We want to pass in an object here with all of our routes options.
+
+17
+00:01:21,380 --> 00:01:28,370
+On the first option we need to add is the history mode and we can set this to either create web history
+
+18
+00:01:28,370 --> 00:01:30,380
+or create web hash history.
+
+19
+00:01:30,410 --> 00:01:31,970
+Now create web history.
+
+20
+00:01:33,140 --> 00:01:37,360
+We'll use real URLs in the browser when we navigate across our pages.
+
+21
+00:01:37,370 --> 00:01:43,150
+So for example, if we went to an about page, then the path would just be about whereas with web hash
+
+22
+00:01:43,220 --> 00:01:49,850
+history, we will see slash, then hash, then slush, and then about when we go to our about page and
+
+23
+00:01:49,850 --> 00:01:54,680
+I'm going to use the web hash history here because when we're using this mode, we don't need any fancy
+
+24
+00:01:54,680 --> 00:01:58,940
+server setup to get our app running if we decide to deploy it to a server.
+
+25
+00:01:59,420 --> 00:02:04,490
+So let's set this history property to create web hash history.
+
+26
+00:02:12,810 --> 00:02:17,940
+And we need to import that from the user base code is automatically added that for me here.
+
+27
+00:02:18,270 --> 00:02:21,210
+But if yours hasn't, then just add it to this import.
+
+28
+00:02:21,240 --> 00:02:23,890
+On the next option we need to add is our roots.
+
+29
+00:02:23,910 --> 00:02:25,620
+So we create a property called routes.
+
+30
+00:02:26,490 --> 00:02:30,000
+Set that to an array and we can set up all of our routes in here.
+
+31
+00:02:30,030 --> 00:02:33,990
+But before we do that, let's add this router instance to our app.
+
+32
+00:02:33,990 --> 00:02:38,250
+So after this create app, we can add the use method to this chain.
+
+33
+00:02:38,250 --> 00:02:41,590
+Don't use parentheses, we can just pass in this route.
+
+34
+00:02:41,590 --> 00:02:42,230
+So constant.
+
+35
+00:02:44,010 --> 00:02:48,390
+I'm just going to break this up onto multiple lines and save that.
+
+36
+00:02:49,090 --> 00:02:50,760
+Let's make sure we're not seeing any errors.
+
+37
+00:02:50,760 --> 00:02:55,260
+I'll reload and I think this error might just be because we haven't set up any routes yet.
+
+38
+00:03:00,320 --> 00:03:01,580
+So let's do that next.
+

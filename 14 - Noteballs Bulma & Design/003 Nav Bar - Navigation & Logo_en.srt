@@ -1,0 +1,184 @@
+1
+00:00:01,090 --> 00:00:02,580
+Let's customize this number.
+
+2
+00:00:03,100 --> 00:00:06,460
+First of all, I want to get rid of this more link here with this dropdown.
+
+3
+00:00:06,970 --> 00:00:09,730
+So let's scroll down the part of view and see if we can find that.
+
+4
+00:00:09,880 --> 00:00:13,970
+We can see that more link here and we can see this dip for the class of not by item.
+
+5
+00:00:13,990 --> 00:00:15,160
+Let's collapse that, Dave.
+
+6
+00:00:15,430 --> 00:00:16,149
+Just get rid of it.
+
+7
+00:00:17,020 --> 00:00:18,940
+Save that and we see that disappear.
+
+8
+00:00:18,970 --> 00:00:22,090
+Now let's move these two links over to the right hand side.
+
+9
+00:00:22,420 --> 00:00:28,030
+So I'm going to scroll up on these two nav item links here when I cut them.
+
+10
+00:00:28,510 --> 00:00:29,950
+Just get rid of this now.
+
+11
+00:00:29,950 --> 00:00:31,900
+Bar dash, start dip.
+
+12
+00:00:33,300 --> 00:00:39,010
+Now we're going to paste those links into this number and dip, which will put them over on the right.
+
+13
+00:00:39,040 --> 00:00:42,310
+So let's collapse this dip inside that now by item.
+
+14
+00:00:42,800 --> 00:00:43,450
+Get rid of that.
+
+15
+00:00:44,030 --> 00:00:46,210
+I'll just paste in the links we caught before.
+
+16
+00:00:46,960 --> 00:00:47,650
+Save that.
+
+17
+00:00:47,890 --> 00:00:52,090
+Let's make these links to notes view and our stats view.
+
+18
+00:00:52,450 --> 00:00:56,480
+So I'm just going to remove the second item and this first one.
+
+19
+00:00:56,500 --> 00:01:00,560
+I'm going to change this to a roots, a link component.
+
+20
+00:01:00,580 --> 00:01:05,319
+Make sure we change both the opening and closing text that I'm going to split the attributes on this.
+
+21
+00:01:06,190 --> 00:01:08,410
+Change the text to notes.
+
+22
+00:01:09,250 --> 00:01:10,840
+I'm allowed to prop to this route.
+
+23
+00:01:10,840 --> 00:01:15,970
+So they set that to the path slash, which is where our notes route is that I'll select this route.
+
+24
+00:01:15,970 --> 00:01:21,340
+So Link duplicates it and we'll change the two prop to the path slash stats.
+
+25
+00:01:21,550 --> 00:01:24,100
+We'll change the text to stats as well.
+
+26
+00:01:24,280 --> 00:01:24,910
+Save that.
+
+27
+00:01:25,930 --> 00:01:28,480
+We now have links to our notes and stats page.
+
+28
+00:01:28,690 --> 00:01:29,560
+We can see this heading.
+
+29
+00:01:29,560 --> 00:01:30,160
+Updating.
+
+30
+00:01:30,760 --> 00:01:38,440
+An owner has a class which is is active which we can add to one of these number items to make it appear
+
+31
+00:01:38,440 --> 00:01:38,980
+active.
+
+32
+00:01:39,160 --> 00:01:42,190
+You can see this link now looks active on these routes.
+
+33
+00:01:42,200 --> 00:01:48,020
+Link components can actually add a class to the link when that link is the active link.
+
+34
+00:01:48,040 --> 00:01:55,960
+So if I just cut that class, we can just add a prop of active dash class and set it to this class is
+
+35
+00:01:55,960 --> 00:01:59,290
+active and I'll also copy that and paste it to the stats link.
+
+36
+00:01:59,590 --> 00:02:03,490
+Say that we should now have active classes on our links.
+
+37
+00:02:04,630 --> 00:02:05,920
+And yet that's working.
+
+38
+00:02:06,010 --> 00:02:09,669
+And now let's just replace this Boma logo with a title for our app.
+
+39
+00:02:09,970 --> 00:02:11,320
+So I'll scroll up to the top.
+
+40
+00:02:11,350 --> 00:02:16,990
+And inside this SNAP brand div, we have this attack with a class of no item.
+
+41
+00:02:17,020 --> 00:02:21,660
+I'm going to remove the image that's inside that and remove this hate trap.
+
+42
+00:02:22,300 --> 00:02:28,150
+I don't want to change this attack into a depth because I don't want this to be a link that inside that
+
+43
+00:02:28,150 --> 00:02:33,970
+I'll just have the text, no pulse and save that to improve the style of the text here.
+
+44
+00:02:34,690 --> 00:02:41,290
+I'm going to add a class to this depth of is dash size does fall to make it a bit bigger and that class
+
+45
+00:02:41,290 --> 00:02:48,250
+of is dash family mono space to give it this mono space style font.
+
+46
+00:02:48,340 --> 00:02:53,020
+And again, you can find all of these classes on the BOMA site, which is very well documented.
+

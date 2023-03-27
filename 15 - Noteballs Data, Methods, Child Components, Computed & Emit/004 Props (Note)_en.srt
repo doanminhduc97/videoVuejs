@@ -1,0 +1,84 @@
+1
+00:00:02,210 --> 00:00:04,400
+Let's pass down the notes object.
+
+2
+00:00:06,150 --> 00:00:13,200
+Which we're using as the placeholder in our V for loop here down from view notes that view down to note
+
+3
+00:00:13,200 --> 00:00:17,670
+dot view so that no dot view has access to note dot content.
+
+4
+00:00:18,780 --> 00:00:22,020
+So don't you know component here.
+
+5
+00:00:22,890 --> 00:00:27,300
+A lot of call notes and set that equal to note on say that.
+
+6
+00:00:27,990 --> 00:00:31,320
+And now if we talk to note dot view we need to receive that.
+
+7
+00:00:32,490 --> 00:00:40,350
+So we need to add a script sets up tasks and a lot of block comment which says props.
+
+8
+00:00:41,670 --> 00:00:44,130
+Now, do you remember how we initialize our props?
+
+9
+00:00:44,160 --> 00:00:44,790
+That's right.
+
+10
+00:00:44,910 --> 00:00:50,460
+We create a constant called props, and we set that equal to define props.
+
+11
+00:00:51,730 --> 00:00:55,750
+We can pass our props in here either as an array or an object.
+
+12
+00:00:56,340 --> 00:00:57,660
+I'm going to use an object here.
+
+13
+00:00:58,170 --> 00:01:02,970
+And so we're going to receive a prop called note, and the type is going to be an object.
+
+14
+00:01:03,900 --> 00:01:07,830
+And we definitely need this prop in order for our component to render correctly.
+
+15
+00:01:08,370 --> 00:01:13,140
+So we should also add required through to make this a required prop.
+
+16
+00:01:13,920 --> 00:01:16,990
+Save that and hopefully this should be working now.
+
+17
+00:01:17,340 --> 00:01:20,550
+I'll reload and yeah, everything's working again.
+
+18
+00:01:20,550 --> 00:01:25,920
+We can see our correct note content coming from the parent component array here.
+
+19
+00:01:26,670 --> 00:01:28,790
+Let's just make sure we can still add a new note.
+
+20
+00:01:32,350 --> 00:01:32,680
+Yeah.
+
+21
+00:01:32,800 --> 00:01:33,940
+We can still out a new note.
+

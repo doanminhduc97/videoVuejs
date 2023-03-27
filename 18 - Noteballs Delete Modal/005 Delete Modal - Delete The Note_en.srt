@@ -1,0 +1,224 @@
+1
+00:00:01,550 --> 00:00:06,380
+The final thing we need to do is actually delete the notes that the user's trying to delete when they
+
+2
+00:00:06,380 --> 00:00:07,939
+click on this read to report it.
+
+3
+00:00:08,720 --> 00:00:17,300
+Now we already have a delete note action in our store and source stores and store notes such as due
+
+4
+00:00:17,450 --> 00:00:24,860
+to the actions we already have this delete note action set up which we can use to delete the notes and
+
+5
+00:00:24,860 --> 00:00:31,880
+all this action is expecting is the ID of the note that we want to delete so we can just trigger this
+
+6
+00:00:31,880 --> 00:00:35,180
+action directly in our modal delete note w component.
+
+7
+00:00:36,050 --> 00:00:42,890
+So let's jump to that and so on the delete button which is here, we just want to trigger that action
+
+8
+00:00:43,670 --> 00:00:44,510
+in our store.
+
+9
+00:00:44,540 --> 00:00:52,280
+Delete note and that's expecting an ID, but we don't actually have access to the note ID within this
+
+10
+00:00:52,280 --> 00:00:52,940
+component.
+
+11
+00:00:53,720 --> 00:01:00,650
+However, if we jump to its parent component note view, then we do have access to all of the note information
+
+12
+00:01:00,650 --> 00:01:02,240
+here in this note prop.
+
+13
+00:01:02,810 --> 00:01:09,170
+So we could use this to pass the notes ID down to the child component modal to the note up view using
+
+14
+00:01:09,170 --> 00:01:09,620
+a prop.
+
+15
+00:01:10,310 --> 00:01:15,200
+So let's jump up to our modal delete note component which is here.
+
+16
+00:01:15,920 --> 00:01:24,230
+And we could either pass down the entire note object so we could call this note set about equal to notes.
+
+17
+00:01:25,190 --> 00:01:29,360
+And this would pass down the entire object with both the ID and the content.
+
+18
+00:01:30,110 --> 00:01:35,340
+However, we only actually need the ID so we might as well only pass the ID down.
+
+19
+00:01:36,920 --> 00:01:44,120
+So to do that, we could pass down notes ID and maybe just change the name of the prop to note I.D.
+
+20
+00:01:44,120 --> 00:01:46,310
+Camel case and save that.
+
+21
+00:01:47,270 --> 00:01:50,240
+So now we need to receive this notes ID prop.
+
+22
+00:01:51,540 --> 00:01:53,780
+In the modal delete note dot view component.
+
+23
+00:01:53,790 --> 00:01:57,170
+So let's jump to that, jump to our props.
+
+24
+00:01:57,180 --> 00:01:58,320
+I'm allowed this prop here.
+
+25
+00:01:59,100 --> 00:02:04,350
+So notes ID type is going to be string.
+
+26
+00:02:05,130 --> 00:02:09,690
+I will make this required as well, so I'll set required to trigger.
+
+27
+00:02:11,310 --> 00:02:12,420
+So let's save that.
+
+28
+00:02:12,420 --> 00:02:14,880
+Make sure this note's ID prop is getting through.
+
+29
+00:02:15,630 --> 00:02:24,750
+So after content here in the modal, let's just output a pre tag with double carry braces and note I'd
+
+30
+00:02:25,320 --> 00:02:32,100
+save the reload and show the modal and yeah we could see ID one being spits out for the first note,
+
+31
+00:02:33,120 --> 00:02:35,430
+an ID to being spits out for the second note.
+
+32
+00:02:36,210 --> 00:02:46,290
+So let's get rid of this pre tuck and we now just need to import store our opinion store into this modal
+
+33
+00:02:46,290 --> 00:02:50,520
+component and just trigger this delete note action and pass in the ID.
+
+34
+00:02:51,420 --> 00:02:53,070
+So first we need to import it.
+
+35
+00:02:53,970 --> 00:03:04,140
+So we can just do import use store notes from slash stores.
+
+36
+00:03:04,140 --> 00:03:06,330
+Slash use store.
+
+37
+00:03:07,020 --> 00:03:09,080
+Actually, no, that's at slash stores.
+
+38
+00:03:09,090 --> 00:03:15,990
+Slash store notes say that we need to assign this store to a constant.
+
+39
+00:03:17,550 --> 00:03:30,660
+So after our props and limits, let's add a store comment and just do const store notes equals use store
+
+40
+00:03:30,660 --> 00:03:36,630
+notes parentheses save that we should now have access to our store here.
+
+41
+00:03:37,640 --> 00:03:41,030
+And this delete note action within the store.
+
+42
+00:03:42,050 --> 00:03:50,540
+So let's jump up to the delete button which is here and I'll split this up onto multiple lines and split
+
+43
+00:03:50,540 --> 00:03:54,090
+the attributes onto multiple lines at a click color.
+
+44
+00:03:56,180 --> 00:04:01,960
+We just want to fire the delete note action that's in our store so we can just do store notes, thoughts,
+
+45
+00:04:01,970 --> 00:04:06,980
+delete notes on passing the ID day on again.
+
+46
+00:04:06,980 --> 00:04:15,290
+We're passing down the ID in this note ID so we can just do store notes, delete notes, notes ID.
+
+47
+00:04:16,519 --> 00:04:18,110
+Let's save that and see if it's working.
+
+48
+00:04:18,290 --> 00:04:18,920
+Reload.
+
+49
+00:04:19,370 --> 00:04:20,180
+Click on Delete.
+
+50
+00:04:20,779 --> 00:04:28,610
+Click on Delete again and we can see the note was deleted and we can also see that the modal is being
+
+51
+00:04:28,610 --> 00:04:31,400
+hidden automatically as well when we click delete.
+
+52
+00:04:32,030 --> 00:04:36,650
+And that's because the modal is a child component of note dot view.
+
+53
+00:04:37,070 --> 00:04:40,420
+A note dot view is the component we're using to display the note.
+
+54
+00:04:41,630 --> 00:04:43,580
+So when we delete a note.
+
+55
+00:04:45,610 --> 00:04:52,240
+That no view component gets removed from the dump along with all of its child components, including
+
+56
+00:04:52,450 --> 00:04:54,430
+modal delete note dot view component.
+

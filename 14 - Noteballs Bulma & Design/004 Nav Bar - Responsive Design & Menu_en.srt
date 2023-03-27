@@ -1,0 +1,264 @@
+1
+00:00:01,100 --> 00:00:07,340
+Now, currently the content of this number will keep stretching out as the browser gets wider and wider,
+
+2
+00:00:07,790 --> 00:00:11,090
+which doesn't look too great, especially on really big screens.
+
+3
+00:00:11,360 --> 00:00:14,720
+So we have the logo right over here and then these links right over here.
+
+4
+00:00:14,870 --> 00:00:20,180
+I'd like all this to be constrained in the middle after a certain point, and we can use bonus container
+
+5
+00:00:20,180 --> 00:00:21,170
+element to do this.
+
+6
+00:00:21,650 --> 00:00:26,710
+So I'm going to surround everything inside an up with a dev with a class of container.
+
+7
+00:00:26,720 --> 00:00:31,970
+So I've just minimized everything that's in there and a lot of depth for the class of container to make
+
+8
+00:00:31,970 --> 00:00:37,970
+sure it constrains once the browser is wider than a certain number of pixels out of class of is dash
+
+9
+00:00:37,970 --> 00:00:39,590
+max dash desktop.
+
+10
+00:00:40,460 --> 00:00:42,800
+And these classes are all documented on the bonus site.
+
+11
+00:00:43,130 --> 00:00:48,670
+And then I'm just going to move this not pop round this not bar menu into that div and save that and
+
+12
+00:00:48,680 --> 00:00:54,410
+we can now see a larger screen's everything is constrained to the middle of the page.
+
+13
+00:00:54,830 --> 00:01:00,680
+Now, if our view gets below one or two four pixels, we see the novel length disappear and we see this
+
+14
+00:01:00,680 --> 00:01:03,560
+little burger icon, but nothing happens when we click it.
+
+15
+00:01:03,590 --> 00:01:09,470
+That's because in order to show the mobile menu change this icon into its active state, we need to
+
+16
+00:01:09,470 --> 00:01:15,110
+add a class of is active to both the burger icon and the now menu as well.
+
+17
+00:01:15,330 --> 00:01:18,430
+This is all documented on the KNOP on the page.
+
+18
+00:01:18,440 --> 00:01:21,940
+But just to demonstrate this, let's hardcoded those classes in now.
+
+19
+00:01:21,950 --> 00:01:26,330
+So I'm going to split the attributes on this tag with a class of not pop burger.
+
+20
+00:01:28,950 --> 00:01:35,890
+I'm going to add a class of is active and save that we can see the icon change to an X and if we scroll
+
+21
+00:01:35,890 --> 00:01:39,970
+down to this not menu dip, I'll also split the attributes on that.
+
+22
+00:01:40,300 --> 00:01:41,770
+I'll have the same class to this div.
+
+23
+00:01:41,770 --> 00:01:46,630
+So is dash active save that we can now see the mobile menu appear.
+
+24
+00:01:46,630 --> 00:01:51,940
+So let's set up a ref to toggle these classes when we click on the burger menu.
+
+25
+00:01:51,970 --> 00:01:58,480
+So I'm going to remove these hardcoded classes for now from the top menu diff on the number burger attack.
+
+26
+00:01:58,480 --> 00:02:03,310
+Say that unless you're down to our script section, which doesn't exist yet, so let's create it.
+
+27
+00:02:03,520 --> 00:02:09,060
+Script sets up a lot of block comment which says mobile now.
+
+28
+00:02:11,410 --> 00:02:18,940
+I will set a constant called show mobile now set by equal to a ref with an initial value of false.
+
+29
+00:02:18,970 --> 00:02:21,600
+So when this is false, we won't show the mobile enough.
+
+30
+00:02:21,610 --> 00:02:25,240
+When it's true, we will show it and we need to import the ref method from view.
+
+31
+00:02:26,050 --> 00:02:27,850
+So just going to add a quick comment here.
+
+32
+00:02:27,880 --> 00:02:35,140
+Imports will import ref from view and save that.
+
+33
+00:02:35,140 --> 00:02:38,680
+And now let's conditionally add those classes based on this ref.
+
+34
+00:02:38,680 --> 00:02:41,890
+So let's jump to the burger icon first, which is here.
+
+35
+00:02:43,180 --> 00:02:45,400
+With a class of not bar dash burger.
+
+36
+00:02:45,400 --> 00:02:51,870
+Now lets bind to the class attributes by adding colon class curly braces and a lot of class of is dash
+
+37
+00:02:51,880 --> 00:02:56,830
+active, but only when show mobile nav is true.
+
+38
+00:02:57,040 --> 00:03:03,370
+And then I'll copy this and also add it to this day with the class enough bar dash menu and I'll save
+
+39
+00:03:03,370 --> 00:03:03,670
+that.
+
+40
+00:03:04,450 --> 00:03:11,440
+And now if we jump down to our ref and change the value to true that we can now see the mobile NAV and
+
+41
+00:03:11,440 --> 00:03:13,960
+the active version of the burger icon.
+
+42
+00:03:13,990 --> 00:03:21,490
+So let's set that back to false and we'll toggle the value of this ref when we click on the burger menu.
+
+43
+00:03:22,330 --> 00:03:23,830
+So we'll jump up to.
+
+44
+00:03:25,130 --> 00:03:33,620
+The nut Bob burger attack an out of click and when we click this we're going to set show mobile now
+
+45
+00:03:35,120 --> 00:03:38,540
+equal to the opposite of show mobile now.
+
+46
+00:03:38,720 --> 00:03:42,200
+So if it's false we'll set it to true and if it's true, will set it to false.
+
+47
+00:03:42,200 --> 00:03:45,770
+And because this is an attack, it's going to try and go somewhere when we click it.
+
+48
+00:03:46,920 --> 00:03:52,770
+So to stop that from happening, I'm just going to add a modifier of prevent and this will prevent the
+
+49
+00:03:52,770 --> 00:03:55,590
+default behavior of the element we're clicking on.
+
+50
+00:03:55,590 --> 00:03:59,420
+The default behavior of an attack is to go to another page.
+
+51
+00:03:59,430 --> 00:04:01,320
+So let's save that and see if that's working.
+
+52
+00:04:01,680 --> 00:04:04,200
+Click on the button and we see the mobile number page.
+
+53
+00:04:04,320 --> 00:04:06,120
+Click it again and we see it disappear.
+
+54
+00:04:06,150 --> 00:04:10,180
+Now, I don't like the fact that our mobile menu is pushing our page content down.
+
+55
+00:04:10,470 --> 00:04:12,030
+See how it's pushing this heading now.
+
+56
+00:04:12,060 --> 00:04:15,520
+I would rather it was just position absolutely over the top of our page.
+
+57
+00:04:15,540 --> 00:04:18,390
+So let's just add a little bit of style to make that happen.
+
+58
+00:04:19,140 --> 00:04:23,260
+So let's scroll down to the bottom and I do style tag.
+
+59
+00:04:25,290 --> 00:04:27,090
+A lot of media query here for mobile.
+
+60
+00:04:27,210 --> 00:04:38,440
+So media lacks width one, two, three pixels because that's when the mobile nav styles kick in.
+
+61
+00:04:38,460 --> 00:04:40,200
+When we scale down the browser.
+
+62
+00:04:41,580 --> 00:04:46,770
+And now we want to target on up menu, which is this step here with the class of up dash menu.
+
+63
+00:04:46,800 --> 00:04:55,890
+So I'm just going to add dash bar dash menu set up to position absolute and set the left to zero and
+
+64
+00:04:55,890 --> 00:04:58,020
+set the width to 100%.
+
+65
+00:04:58,050 --> 00:05:03,600
+Save that click on the button and our mobile menu is now positioned over the top of our content instead
+
+66
+00:05:03,600 --> 00:05:04,680
+of pushing it down.
+

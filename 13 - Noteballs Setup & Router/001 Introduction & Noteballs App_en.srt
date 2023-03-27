@@ -1,0 +1,128 @@
+1
+00:00:01,040 --> 00:00:05,810
+We're going to spend the rest of this course taking everything we've learned to create this real world.
+
+2
+00:00:05,840 --> 00:00:08,109
+Note taking up called note balls.
+
+3
+00:00:08,119 --> 00:00:13,550
+Creating this app will allow us to take all of our new knowledge of the basics of the composition API
+
+4
+00:00:13,580 --> 00:00:17,960
+and solidify that knowledge with the creation of a real world app from scratch.
+
+5
+00:00:17,990 --> 00:00:20,900
+So in this app we can display a list of notes.
+
+6
+00:00:21,200 --> 00:00:26,100
+Each note has the notes on the number of characters and an edit and delete button.
+
+7
+00:00:26,120 --> 00:00:27,530
+We can add a new note.
+
+8
+00:00:29,390 --> 00:00:33,860
+And we can edit a note and save it.
+
+9
+00:00:34,190 --> 00:00:37,370
+We can delete a note as well with this confirmation model.
+
+10
+00:00:37,490 --> 00:00:41,580
+And we also have a header with links to our two pages, notes and stats.
+
+11
+00:00:41,900 --> 00:00:47,120
+And we have this stats page where we display stats related to our notes, including the number of notes
+
+12
+00:00:47,120 --> 00:00:50,270
+we have and the total number of characters of all our notes.
+
+13
+00:00:50,690 --> 00:00:56,570
+It's also going to look presentable, as you can see, by using the Boma CSS library, and it's also
+
+14
+00:00:56,570 --> 00:00:58,040
+going to be responsive as well.
+
+15
+00:00:58,160 --> 00:01:00,890
+So on desktop, we have these links to our two pages.
+
+16
+00:01:00,890 --> 00:01:06,200
+But if we scale this down, we can see all of the elements scaled out for mobile and our links in the
+
+17
+00:01:06,200 --> 00:01:08,150
+header changed to this little bigger icon.
+
+18
+00:01:08,180 --> 00:01:09,010
+Let me click on that.
+
+19
+00:01:09,030 --> 00:01:11,060
+Could see the links to our two pages.
+
+20
+00:01:11,960 --> 00:01:17,390
+This app is going to make use of almost every concept that we learned earlier on in the course, including
+
+21
+00:01:17,390 --> 00:01:21,240
+view routes on the use routes and use routes and posibles.
+
+22
+00:01:21,560 --> 00:01:25,700
+This time we're actually going to install the URL to set it all up from scratch.
+
+23
+00:01:25,790 --> 00:01:30,360
+It's going to use reactive data, including refs and reactive objects.
+
+24
+00:01:30,380 --> 00:01:33,850
+It's going to use methods, computed properties and watches.
+
+25
+00:01:33,860 --> 00:01:39,200
+It's going to use child components, including props limits and update model value.
+
+26
+00:01:39,230 --> 00:01:45,770
+It's going to use template refs on composable, including custom composable and a composable from the
+
+27
+00:01:45,780 --> 00:01:47,180
+view use library.
+
+28
+00:01:47,210 --> 00:01:52,940
+It's going to use directives and lifecycle hooks and we're going to set up all of our apps, state management
+
+29
+00:01:52,940 --> 00:01:53,900
+using Peneha.
+
+30
+00:01:53,930 --> 00:01:58,940
+Although this time we're actually going to install Peneha on set up our Peneha store completely from
+
+31
+00:01:58,940 --> 00:01:59,520
+scratch.
+
+32
+00:01:59,540 --> 00:02:05,360
+And of course, we'll also be adding state actions and a whole bunch of ghettoes to our Peneha store.
+

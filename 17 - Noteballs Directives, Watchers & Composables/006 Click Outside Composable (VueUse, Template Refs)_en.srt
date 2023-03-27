@@ -1,0 +1,380 @@
+1
+00:00:00,800 --> 00:00:02,990
+So we've created a custom composable.
+
+2
+00:00:03,060 --> 00:00:06,890
+But let's also add a composable from the view use library.
+
+3
+00:00:07,130 --> 00:00:11,780
+And if we look at our mobile menu here currently, the only way we can close this is by clicking on
+
+4
+00:00:11,780 --> 00:00:12,490
+the X.
+
+5
+00:00:13,130 --> 00:00:17,090
+We can't close it by clicking outside of it like we would usually expect.
+
+6
+00:00:17,630 --> 00:00:22,340
+So let's use one of the composable from the view used library to solve this for us.
+
+7
+00:00:23,150 --> 00:00:26,540
+So let's jump over to view use dot org.
+
+8
+00:00:27,810 --> 00:00:28,650
+Get started.
+
+9
+00:00:29,580 --> 00:00:31,290
+We need to install this first.
+
+10
+00:00:31,950 --> 00:00:34,140
+So let's talk to our terminal killer.
+
+11
+00:00:34,150 --> 00:00:37,890
+That process will run this command to install.
+
+12
+00:00:38,040 --> 00:00:38,730
+If you use.
+
+13
+00:00:40,960 --> 00:00:41,730
+I'm not finished.
+
+14
+00:00:41,740 --> 00:00:50,920
+So let's relaunch our up with AMPM run death and on The View Use I'm going to go to menu core functions
+
+15
+00:00:52,030 --> 00:00:56,920
+census how we're going to use this on click outside composable.
+
+16
+00:00:57,220 --> 00:00:58,060
+So let's click on that.
+
+17
+00:00:59,300 --> 00:01:00,580
+We can see an example here.
+
+18
+00:01:00,590 --> 00:01:06,470
+We can open up a model and we can close it with the exporting, but we can also close it by clicking
+
+19
+00:01:06,470 --> 00:01:07,970
+anywhere outside of the model.
+
+20
+00:01:08,510 --> 00:01:16,640
+So let's hide the terminal here, close all of our components and open up the number, source components,
+
+21
+00:01:17,000 --> 00:01:18,410
+layout number.
+
+22
+00:01:19,280 --> 00:01:21,440
+And let's look at the example code here.
+
+23
+00:01:22,070 --> 00:01:26,450
+So we need to import the on click outside composable from view use.
+
+24
+00:01:26,480 --> 00:01:31,100
+So let's copy that line and add that to our import section here.
+
+25
+00:01:31,940 --> 00:01:37,760
+And we can see in this example here, we need to set up a template ref, add that ref to the element
+
+26
+00:01:37,760 --> 00:01:38,900
+before we can use this.
+
+27
+00:01:39,620 --> 00:01:48,230
+So let's find on up menu element which is here this Dave with the classic enough bar menu.
+
+28
+00:01:48,710 --> 00:01:50,000
+So let's add a rep to this.
+
+29
+00:01:51,140 --> 00:01:56,150
+We could call this number menu ref or something like that.
+
+30
+00:01:57,100 --> 00:01:58,730
+Let's jump down to the script section.
+
+31
+00:02:00,800 --> 00:02:06,440
+A lot of comment here which says Click outside to close.
+
+32
+00:02:08,479 --> 00:02:12,320
+We need to set up a template ref like we can see in this example here.
+
+33
+00:02:13,190 --> 00:02:20,960
+So we'll create a constant with the same name as our ref, which is what has it gone now from a new
+
+34
+00:02:20,960 --> 00:02:21,310
+ref?
+
+35
+00:02:21,950 --> 00:02:25,350
+So const nav bar menu.
+
+36
+00:02:25,370 --> 00:02:29,480
+Ref equals a ref with a default value of no.
+
+37
+00:02:30,200 --> 00:02:32,870
+And now we can use this composable.
+
+38
+00:02:32,900 --> 00:02:34,160
+So let's copy this line here.
+
+39
+00:02:37,140 --> 00:02:37,890
+Paste that here.
+
+40
+00:02:39,300 --> 00:02:40,950
+Change the target to this graph here.
+
+41
+00:02:41,190 --> 00:02:41,970
+So I'll copy that.
+
+42
+00:02:42,870 --> 00:02:43,680
+Paste that there.
+
+43
+00:02:44,400 --> 00:02:45,060
+Save that.
+
+44
+00:02:46,650 --> 00:02:48,060
+Now let's show the mobile menu.
+
+45
+00:02:48,810 --> 00:02:50,940
+Clear the console and click outside somewhere.
+
+46
+00:02:51,840 --> 00:02:54,760
+And we can see the events objects being locked out here.
+
+47
+00:02:54,780 --> 00:02:56,040
+So that seems to be working.
+
+48
+00:02:56,910 --> 00:02:59,260
+But we don't want to just log out the event object.
+
+49
+00:02:59,280 --> 00:03:05,520
+So I'm going to select all of that and add Kelly Braces and add a new line in the middle.
+
+50
+00:03:06,930 --> 00:03:12,330
+This show Mobile now determines whether or not the mobile menu is shown.
+
+51
+00:03:12,420 --> 00:03:16,590
+So we can just set this back to false once we've clicked outside.
+
+52
+00:03:17,340 --> 00:03:21,450
+So in this one click outside method, we can just do show mobile.
+
+53
+00:03:21,450 --> 00:03:28,020
+Now the value equals false and I'll just remove the event object from here because I'm not going to
+
+54
+00:03:28,020 --> 00:03:29,830
+need that saved up.
+
+55
+00:03:29,830 --> 00:03:30,780
+And let's see if it's working.
+
+56
+00:03:31,620 --> 00:03:32,430
+Show the menu.
+
+57
+00:03:34,480 --> 00:03:36,940
+Click outside and we see it disappears.
+
+58
+00:03:37,570 --> 00:03:44,140
+However, it's now not closing the mobile menu and we click on the X, so let's see if we can fix that.
+
+59
+00:03:44,290 --> 00:03:47,440
+Let's jump up to that button, which is here.
+
+60
+00:03:49,000 --> 00:03:51,010
+So I think I see what's happening here.
+
+61
+00:03:51,730 --> 00:03:56,320
+So our mobile menu is currently showing when we click on the burger button.
+
+62
+00:03:57,040 --> 00:03:58,900
+Well, because this is outside of.
+
+63
+00:03:59,930 --> 00:04:06,670
+Our mobile menu is triggering the on click outside event on settings show mobile now.
+
+64
+00:04:06,750 --> 00:04:10,010
+Back to false and hiding the mobile menu.
+
+65
+00:04:11,030 --> 00:04:12,540
+But because we also have this.
+
+66
+00:04:13,130 --> 00:04:15,620
+Click on the burger button.
+
+67
+00:04:16,700 --> 00:04:22,220
+This is then firing this code which is going to show mobile now to the opposite of itself.
+
+68
+00:04:22,910 --> 00:04:25,070
+So at this point, it's going to set it back to true.
+
+69
+00:04:26,510 --> 00:04:33,410
+And if we jump back to the on click outside documentation and scroll down a bit, we can actually add
+
+70
+00:04:33,410 --> 00:04:36,230
+an options object as a third parameter.
+
+71
+00:04:36,560 --> 00:04:48,170
+After the target and the handler where we can up this ignore option to tell the composable which elements
+
+72
+00:04:48,170 --> 00:04:52,070
+to ignore the on click outside functionality.
+
+73
+00:04:52,790 --> 00:04:57,620
+So we can just make it ignore all clicks on this not pop burger.
+
+74
+00:04:58,850 --> 00:05:02,000
+Now we need to set up a template ref first for this.
+
+75
+00:05:02,300 --> 00:05:03,230
+Now Bob Burger.
+
+76
+00:05:03,980 --> 00:05:05,300
+So let's add a ref to this.
+
+77
+00:05:05,810 --> 00:05:09,800
+Set that to nav bar burger ref.
+
+78
+00:05:10,790 --> 00:05:11,450
+Save that.
+
+79
+00:05:12,110 --> 00:05:12,830
+So down.
+
+80
+00:05:13,970 --> 00:05:17,090
+Now we need to set up our data ref for that hit.
+
+81
+00:05:17,090 --> 00:05:18,380
+So I'll duplicate this one.
+
+82
+00:05:18,830 --> 00:05:22,700
+Change this to contact number burger ref.
+
+83
+00:05:23,720 --> 00:05:25,850
+And then in this one, click outside.
+
+84
+00:05:26,870 --> 00:05:27,410
+Function.
+
+85
+00:05:28,610 --> 00:05:34,310
+After our handler function, we can add a comma and then an object.
+
+86
+00:05:36,260 --> 00:05:44,900
+And that inside that we cannot ignore option set that equal to an array of pass in the template ref.
+
+87
+00:05:44,900 --> 00:05:48,890
+Solve any elements we want this composable to ignore.
+
+88
+00:05:49,670 --> 00:05:50,720
+So let's pass in this.
+
+89
+00:05:50,960 --> 00:05:53,450
+Now popsugar paste that in there.
+
+90
+00:05:53,450 --> 00:05:54,050
+Save that.
+
+91
+00:05:55,400 --> 00:05:56,540
+Let's see if that's fixed.
+
+92
+00:05:57,530 --> 00:05:59,990
+Click on the button on yet.
+
+93
+00:05:59,990 --> 00:06:02,480
+We can still close it by clicking on the x.
+
+94
+00:06:03,770 --> 00:06:05,780
+Let's see if we can still click outside to close it.
+
+95
+00:06:06,350 --> 00:06:07,460
+And yes, we can.
+

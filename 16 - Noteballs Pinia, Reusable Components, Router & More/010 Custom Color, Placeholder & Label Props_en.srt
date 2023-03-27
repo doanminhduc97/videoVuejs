@@ -1,0 +1,600 @@
+1
+00:00:01,150 --> 00:00:07,000
+Let's add our new reusable component add edit note w to undo edit note page.
+
+2
+00:00:07,060 --> 00:00:12,130
+So I'm going to jump to view notes where we're currently using the add edit note component and I'll
+
+3
+00:00:12,130 --> 00:00:18,370
+just copy this, close that jump to the new view view, edit, note, dot view and will paste that inside
+
+4
+00:00:18,370 --> 00:00:18,820
+this diff.
+
+5
+00:00:19,370 --> 00:00:22,000
+Let's just remove all of the dynamic content for now.
+
+6
+00:00:22,000 --> 00:00:27,190
+So I'll remove the V model and remove the click handler on the disabled attribute.
+
+7
+00:00:27,520 --> 00:00:28,170
+Save that.
+
+8
+00:00:28,360 --> 00:00:30,730
+We need to import this component before we can use it.
+
+9
+00:00:30,730 --> 00:00:31,720
+So let's order.
+
+10
+00:00:31,720 --> 00:00:43,240
+Script sets up tags at our imports section and we'll import and edit notes from slash components.
+
+11
+00:00:43,750 --> 00:00:52,780
+Slash notes slash at edit notes the view save that we can now see that component on the page.
+
+12
+00:00:52,810 --> 00:00:58,090
+I was seeing a warning in the console here missing required prop model value and that's because this
+
+13
+00:00:58,090 --> 00:01:05,500
+component to edit note dot view is expecting the model value prop or the V model prop on this is set
+
+14
+00:01:05,500 --> 00:01:07,300
+to a required prop.
+
+15
+00:01:07,300 --> 00:01:13,690
+So let's set up a ref on view edit note dot view that we can bind to this add edit note component.
+
+16
+00:01:13,690 --> 00:01:21,130
+So in our script section, a lot of new content which says note will sets up a ref called note content
+
+17
+00:01:21,610 --> 00:01:25,660
+so that equal to a ref with an initial value of an empty string.
+
+18
+00:01:25,900 --> 00:01:28,630
+Because we're using the ref method, we need to import this.
+
+19
+00:01:28,630 --> 00:01:37,870
+So let's import ref from view and now we can bind this ref to our add edit note component so it cannot
+
+20
+00:01:37,870 --> 00:01:39,780
+be model on.
+
+21
+00:01:39,800 --> 00:01:44,680
+Remember, all we need to do is not the V model because we've already set up this add edit note component
+
+22
+00:01:44,680 --> 00:01:50,380
+to automatically pull in whatever v model we pass into this component using the model value prop and
+
+23
+00:01:50,380 --> 00:01:56,440
+automatically update the V model which is on the parent component by using the update model value event.
+
+24
+00:01:56,440 --> 00:02:01,480
+So all we need to do now is just bind this no content ref to this component.
+
+25
+00:02:01,480 --> 00:02:05,320
+So we'll set this V model to note content on save that.
+
+26
+00:02:05,960 --> 00:02:07,420
+Let's just make sure that's hooking up.
+
+27
+00:02:07,780 --> 00:02:12,010
+I'll put some text in here and yeah, we can see the update on the text area.
+
+28
+00:02:12,580 --> 00:02:15,340
+So let's set that back to an anti string and save that.
+
+29
+00:02:15,610 --> 00:02:17,560
+Let's change the text on this button here.
+
+30
+00:02:17,560 --> 00:02:21,130
+So we'll change this text to save note, save up.
+
+31
+00:02:21,130 --> 00:02:26,320
+Now I would like this card which is surrounding our text area and bottle to have a different color when
+
+32
+00:02:26,320 --> 00:02:27,700
+we're on the edit page.
+
+33
+00:02:27,700 --> 00:02:32,530
+So it looks a little bit different from the card secretariat button, which is on the notes page.
+
+34
+00:02:32,740 --> 00:02:38,110
+And if we open up our reusable component add edit no doubt view, we can see this class on the card
+
+35
+00:02:38,380 --> 00:02:40,090
+has background success.
+
+36
+00:02:40,340 --> 00:02:43,450
+We can change this word success to create different colors.
+
+37
+00:02:43,450 --> 00:02:49,240
+So for example we can change this to has background link doc to give it this blue collar.
+
+38
+00:02:49,240 --> 00:02:54,730
+So let's set up a prop on this add edit note the view component so that we can dynamically change this
+
+39
+00:02:54,730 --> 00:02:56,650
+word here, thus changing the color.
+
+40
+00:02:56,770 --> 00:03:02,770
+I'll set this back to success for now and save that now let's jump down to props and we'll set up a
+
+41
+00:03:02,770 --> 00:03:10,870
+new prop called BG Color and we'll set the type to string and we'll get this a default value as well.
+
+42
+00:03:10,900 --> 00:03:15,790
+So if we don't provide this prop on a parent component, we can still have a background color on this
+
+43
+00:03:15,790 --> 00:03:16,240
+card.
+
+44
+00:03:16,240 --> 00:03:18,730
+So we'll set the default to success.
+
+45
+00:03:19,030 --> 00:03:19,720
+I'll save that.
+
+46
+00:03:19,720 --> 00:03:22,660
+And now let's jump up to this, Dave, with the class ID card.
+
+47
+00:03:22,660 --> 00:03:28,330
+I'll split the attributes on that and I'm going to cut this has background success doc plus I will bind
+
+48
+00:03:28,330 --> 00:03:29,980
+to the class attribute.
+
+49
+00:03:30,340 --> 00:03:35,710
+I'll use a template string here using optics so that we can output the content of this prop.
+
+50
+00:03:35,740 --> 00:03:38,740
+I'll paste in that class that we copied as background success.
+
+51
+00:03:38,740 --> 00:03:46,330
+Doc Let's just get rid of the word success and a dollar Kelly braces an output prop and set BG color
+
+52
+00:03:46,330 --> 00:03:52,930
+and we can either do props BG color or we can just to BG color, so we'll save that reload.
+
+53
+00:03:53,440 --> 00:03:58,150
+Now we can see that if we don't provide this BG color prop to this add edit note component, when we
+
+54
+00:03:58,150 --> 00:04:02,740
+use it on a parent component, then we see the default background color because it's going to use this
+
+55
+00:04:02,740 --> 00:04:05,050
+default value in the prop which we set here.
+
+56
+00:04:05,620 --> 00:04:12,280
+But we should be able to override this word success by providing this prop to the add edit note component
+
+57
+00:04:12,280 --> 00:04:13,930
+when we use an apparent component.
+
+58
+00:04:13,960 --> 00:04:19,180
+So let's jump to view, edit note dot view a lot this prop to our add edit note component here.
+
+59
+00:04:19,209 --> 00:04:21,040
+So we'll set BG color.
+
+60
+00:04:21,880 --> 00:04:27,820
+I will set this to link save up and we now see this blue color and if we inspect it, we can see that
+
+61
+00:04:27,820 --> 00:04:30,820
+the card house this class has background links.
+
+62
+00:04:30,850 --> 00:04:37,330
+But if we go to the notes page and inspect card, we can see the class has background success dog.
+
+63
+00:04:37,420 --> 00:04:39,100
+So that background color is working.
+
+64
+00:04:39,100 --> 00:04:43,870
+Now let's also make a save notes button, the same kind of color as well.
+
+65
+00:04:44,230 --> 00:04:50,260
+The save notebook is here, so let's change that class to has background link instead of success.
+
+66
+00:04:50,590 --> 00:04:53,230
+Save that we now have a blue button.
+
+67
+00:04:53,470 --> 00:04:57,340
+While we're at it, let's disable this button when this field is empty.
+
+68
+00:04:57,340 --> 00:04:59,800
+So again, we'll update disabled.
+
+69
+00:05:00,360 --> 00:05:04,520
+Review conditionally only when no content is empty.
+
+70
+00:05:04,530 --> 00:05:07,290
+So we'll set this to not note content.
+
+71
+00:05:07,620 --> 00:05:11,340
+Save that and that button is disabled by default.
+
+72
+00:05:11,340 --> 00:05:14,040
+But if we type something in, then it becomes enabled again.
+
+73
+00:05:14,520 --> 00:05:20,430
+Now we also need to make this placeholder text in the text area customizable as well because the text
+
+74
+00:05:20,430 --> 00:05:26,400
+add a new note doesn't make sense on this page because this text area is going to be for editing a note
+
+75
+00:05:26,400 --> 00:05:28,140
+and not adding a new note.
+
+76
+00:05:28,230 --> 00:05:35,040
+So let's add another prop add edit note the view for this placeholder text which is currently just hardcoded
+
+77
+00:05:35,070 --> 00:05:36,510
+onto the text area.
+
+78
+00:05:37,530 --> 00:05:44,520
+So we'll set up a new prop called placeholder set to a type of string and we'll give this a default
+
+79
+00:05:44,520 --> 00:05:49,050
+value of, let's say type something, dot, dot, dot.
+
+80
+00:05:49,710 --> 00:05:50,370
+Save that.
+
+81
+00:05:50,400 --> 00:05:56,130
+Now let's use this prop on our text area so we can just bind to the place, hold the attribute, and
+
+82
+00:05:56,130 --> 00:06:01,320
+then output this prop either with prop stock, placeholder or just placeholder.
+
+83
+00:06:01,410 --> 00:06:02,940
+So I'll save that reload.
+
+84
+00:06:03,150 --> 00:06:08,730
+We can now see the default value of type something in the placeholder, but we should not be able to
+
+85
+00:06:08,730 --> 00:06:11,700
+override this by passing in this place.
+
+86
+00:06:11,700 --> 00:06:16,950
+Hold a prop to our to edit note component when we use it on one of our pages.
+
+87
+00:06:16,950 --> 00:06:19,230
+So let's jump to view edit note that view.
+
+88
+00:06:19,230 --> 00:06:27,180
+I will at this place hold a prop so placeholder we could set this to edit note save that and we see
+
+89
+00:06:27,180 --> 00:06:28,440
+that in the text area.
+
+90
+00:06:28,650 --> 00:06:32,640
+If we jump back to our notes, page is still says type something.
+
+91
+00:06:32,640 --> 00:06:34,050
+So let's override that as well.
+
+92
+00:06:34,380 --> 00:06:36,480
+So we'll open up view note stock view.
+
+93
+00:06:36,660 --> 00:06:40,350
+I will love this placeholder prop here as well to our edit note component.
+
+94
+00:06:40,350 --> 00:06:41,250
+So placeholder.
+
+95
+00:06:42,980 --> 00:06:45,920
+Almost at least to add new notes.
+
+96
+00:06:46,070 --> 00:06:46,730
+Say that.
+
+97
+00:06:46,790 --> 00:06:47,870
+Let we see the update.
+
+98
+00:06:48,140 --> 00:06:53,540
+I'd also like to be able to display a label at the top of our text area to make the function of this
+
+99
+00:06:53,540 --> 00:06:55,040
+text area a bit clearer.
+
+100
+00:06:55,070 --> 00:06:57,240
+So first, let's just set up the markup for this.
+
+101
+00:06:57,260 --> 00:06:59,430
+So if you want to add edit, note up for you.
+
+102
+00:06:59,450 --> 00:07:07,160
+And at the top of our card element above this field, I'm going to add a label with a class of label.
+
+103
+00:07:08,270 --> 00:07:14,330
+For now, I'll remove this fall attribute and I'll just set the text to label text for now.
+
+104
+00:07:14,720 --> 00:07:15,380
+Save that.
+
+105
+00:07:15,680 --> 00:07:17,130
+Let's make this white.
+
+106
+00:07:17,180 --> 00:07:21,360
+So a lot of class of has text white to make it white.
+
+107
+00:07:21,380 --> 00:07:26,420
+And again, these classes are just from Beaumont, and I want this label to be optional.
+
+108
+00:07:26,430 --> 00:07:29,780
+So let's set up another prop for this.
+
+109
+00:07:30,110 --> 00:07:34,340
+So we'll set up a prop called label and set that to a type of string.
+
+110
+00:07:35,180 --> 00:07:35,840
+Save that.
+
+111
+00:07:36,110 --> 00:07:40,830
+And I only want to display this label element on the page if this prop has been provided.
+
+112
+00:07:40,850 --> 00:07:45,280
+So I'm going to split the attributes on this and we can just add a V if directive.
+
+113
+00:07:45,520 --> 00:07:49,550
+We only want to display this if the label prop has been provided.
+
+114
+00:07:49,820 --> 00:07:54,760
+So we can either do V if props that label or just V if label.
+
+115
+00:07:54,770 --> 00:07:57,110
+So I'll save that and we see that label disappear.
+
+116
+00:07:57,260 --> 00:08:02,750
+Since we're not actually providing this label prop to this add edit note component when we use it on
+
+117
+00:08:02,750 --> 00:08:04,010
+our edit page here.
+
+118
+00:08:04,340 --> 00:08:10,990
+But if we add this label prop here, so label because that is to edit notes, save that and reload.
+
+119
+00:08:11,000 --> 00:08:16,700
+We can now see the label again since we're providing this prop, although it's not displaying the value
+
+120
+00:08:16,700 --> 00:08:17,770
+that we're passing in here.
+
+121
+00:08:17,780 --> 00:08:23,120
+So let's jump back to add edit note dot view and we can just output the contents of this prop here so
+
+122
+00:08:23,120 --> 00:08:30,200
+we can just replace label text with double click prices and label save that and we now see edit note.
+
+123
+00:08:30,230 --> 00:08:34,909
+And if we jump back to the notes view and we don't see that label since we're not providing that label
+
+124
+00:08:34,909 --> 00:08:37,610
+prop on the View Notes page here.
+
+125
+00:08:37,850 --> 00:08:43,490
+And the reason that I think we need a label here is because when the user clicks on edit notes, they're
+
+126
+00:08:43,490 --> 00:08:45,470
+not going to see an empty text area here.
+
+127
+00:08:45,560 --> 00:08:50,180
+They're going to see this text area populated with the note, and so they won't see that placeholder.
+
+128
+00:08:50,180 --> 00:08:55,730
+So this will just give the user a little bit more clarification before we move on and start adding a
+
+129
+00:08:55,730 --> 00:09:00,500
+new getter to our opinion store for getting the content of the note that the user's trying to edit out
+
+130
+00:09:00,500 --> 00:09:06,140
+an action for updating the note that's just got a council button here, which takes us back to the notes
+
+131
+00:09:06,140 --> 00:09:11,240
+page since right now there's no way for the user to get back aside from clicking on the back, put it
+
+132
+00:09:11,630 --> 00:09:15,560
+so we're jump to view edit note dot view on inside our button slot.
+
+133
+00:09:15,590 --> 00:09:23,480
+Here, we'll just add another button so I'll duplicate this save note, remove the disabled prop, change
+
+134
+00:09:23,480 --> 00:09:31,550
+the text to cancel save that out I'm going to change this class house background linked to is dash light
+
+135
+00:09:32,000 --> 00:09:33,470
+to give it this light gray color.
+
+136
+00:09:33,500 --> 00:09:38,540
+Now there's a couple of ways that we could send the user back to the notes page when they click on this.
+
+137
+00:09:38,570 --> 00:09:45,680
+One thing we could do is convert this button into a root to link component, set the two prop to slash,
+
+138
+00:09:45,680 --> 00:09:46,390
+save that.
+
+139
+00:09:46,400 --> 00:09:48,440
+See if that works, that works.
+
+140
+00:09:48,680 --> 00:09:51,590
+The other thing we could do is leave this as a button.
+
+141
+00:09:53,620 --> 00:09:56,650
+And at a click, how much of this click?
+
+142
+00:09:56,830 --> 00:10:03,100
+We could use the dollar router method because we can still use the dollar router method in our templates
+
+143
+00:10:03,100 --> 00:10:04,570
+using the composition API.
+
+144
+00:10:04,600 --> 00:10:11,170
+So we could either do dollar roots dot push forward slash see if that works.
+
+145
+00:10:11,350 --> 00:10:12,250
+Yeah, that works.
+
+146
+00:10:12,700 --> 00:10:18,190
+Or if our app was more complicated and had lots of different ways that we would get to this edit page
+
+147
+00:10:18,190 --> 00:10:22,930
+from different pages, then we might want to just send the user straight back to wherever they just
+
+148
+00:10:22,930 --> 00:10:23,500
+came from.
+
+149
+00:10:23,500 --> 00:10:30,520
+So to do that, we could just do dollar roots, dot back parentheses, save that reload, and that works
+
+150
+00:10:30,520 --> 00:10:30,910
+as well.
+

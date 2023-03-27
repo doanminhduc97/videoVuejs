@@ -1,0 +1,192 @@
+1
+00:00:01,710 --> 00:00:10,650
+Let's import this pioneer store we've created into View Notes Dot View Notes Page and use the notes
+
+2
+00:00:10,650 --> 00:00:17,040
+array that's in our store to display our notes on the page instead of using the notes array, which
+
+3
+00:00:17,040 --> 00:00:19,710
+we've hardcoded into view notes dot view.
+
+4
+00:00:20,610 --> 00:00:24,720
+So first of all, we need to import our store into view notes that view.
+
+5
+00:00:25,800 --> 00:00:29,580
+We want to import this constant here, use store notes.
+
+6
+00:00:30,180 --> 00:00:38,430
+So let's jump to view notes that view and look to our imports and we'll just add import curly braces.
+
+7
+00:00:38,760 --> 00:00:44,580
+Use store notes from at slush stores.
+
+8
+00:00:44,670 --> 00:00:46,650
+Slash store notes.
+
+9
+00:00:47,220 --> 00:00:47,880
+Say that.
+
+10
+00:00:49,270 --> 00:00:53,380
+Reload and to get access to the store.
+
+11
+00:00:53,620 --> 00:00:57,460
+In our component, we need to assign it to a constant or variable.
+
+12
+00:00:58,390 --> 00:01:01,300
+So a lot another block comment here which says store
+
+13
+00:01:04,870 --> 00:01:08,200
+and will create a constant called store notes.
+
+14
+00:01:09,530 --> 00:01:15,070
+On a sign that to use store notes, parentheses, save that.
+
+15
+00:01:16,050 --> 00:01:19,460
+And now that we've done that, we should be able to see our store in our view.
+
+16
+00:01:19,460 --> 00:01:26,090
+DevTools So let's click on this little double arrow and then view and it says in the console store note
+
+17
+00:01:26,100 --> 00:01:28,670
+store installed and we can see our store there.
+
+18
+00:01:29,030 --> 00:01:29,780
+We click on that.
+
+19
+00:01:31,070 --> 00:01:32,510
+We can see our notes are array.
+
+20
+00:01:34,310 --> 00:01:36,350
+And all of the data from each note.
+
+21
+00:01:37,130 --> 00:01:44,570
+Now let's output these notes from the notes array that's in our store instead of from the array that's
+
+22
+00:01:44,570 --> 00:01:46,730
+hardcoded into few notes that view here.
+
+23
+00:01:47,210 --> 00:01:53,660
+So we can just jot two notes component on instead of V for notes in notes.
+
+24
+00:01:54,290 --> 00:01:59,390
+We can do V for notes in then the name of our store, which is store notes.
+
+25
+00:02:00,800 --> 00:02:02,720
+So we can do store notes.
+
+26
+00:02:02,990 --> 00:02:05,180
+And from that store, we want to access the notes.
+
+27
+00:02:05,240 --> 00:02:05,630
+Right?
+
+28
+00:02:05,650 --> 00:02:10,370
+So we can just do notes on save that reload.
+
+29
+00:02:11,770 --> 00:02:19,450
+We can still see our notes on the page, except now they're coming from our store instead of this array,
+
+30
+00:02:20,110 --> 00:02:22,180
+which is, in our view, notes W component.
+
+31
+00:02:23,080 --> 00:02:28,240
+So we should now be able to just get rid of this notes array and save that.
+
+32
+00:02:30,970 --> 00:02:33,010
+We can still see notes on the page.
+
+33
+00:02:33,820 --> 00:02:35,590
+And if we go to the DevTools.
+
+34
+00:02:36,950 --> 00:02:38,930
+And we changed the content in one of our notes.
+
+35
+00:02:45,170 --> 00:02:48,740
+Now we can see our notes all day in real time on the template as well.
+
+36
+00:02:50,150 --> 00:02:51,020
+I'll just reload that.
+
+37
+00:02:52,190 --> 00:02:57,740
+And if we jump to store notes, don't just change the content of one of these notes.
+
+38
+00:02:57,750 --> 00:03:00,110
+I'll just remove some of the text and save it.
+
+39
+00:03:00,740 --> 00:03:04,600
+And I mentioned earlier on that hot reloading doesn't seem to be working at the moment.
+
+40
+00:03:04,610 --> 00:03:09,240
+We didn't see the hot reload when I changed the content of this note in the store.
+
+41
+00:03:09,560 --> 00:03:13,760
+And I also showed you that there's a guide on the PDA site if we scroll down here.
+
+42
+00:03:14,360 --> 00:03:15,620
+Module replacement.
+
+43
+00:03:15,920 --> 00:03:19,700
+We attempted to get this work in based on this example, and it wouldn't work.
+
+44
+00:03:20,390 --> 00:03:25,580
+And I still haven't managed to find a way to get this work in at the time I'm recording this, but feel
+
+45
+00:03:25,580 --> 00:03:26,840
+free to give it a try.
+
+46
+00:03:26,870 --> 00:03:32,390
+Maybe it's working now in the future where you are, and if you do find a solution, please share it
+
+47
+00:03:32,390 --> 00:03:33,420
+with this lecture.
+
+48
+00:03:34,430 --> 00:03:38,450
+And if I find a solution and a lot of lectures to this course explaining that.
+

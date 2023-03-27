@@ -1,0 +1,108 @@
+1
+00:00:00,930 --> 00:00:03,270
+Let's add a custom directive to this up.
+
+2
+00:00:03,450 --> 00:00:10,230
+And one thing we could do is create a custom directive which auto focuses this text area when the page
+
+3
+00:00:10,230 --> 00:00:16,620
+is loaded so that the user can immediately start typing a new notes without having to click into it.
+
+4
+00:00:16,890 --> 00:00:23,490
+So first of all, let's just set up a local custom directive inside this add edit note component and
+
+5
+00:00:23,490 --> 00:00:27,750
+that's in source components notes and at edit notes.
+
+6
+00:00:28,620 --> 00:00:33,030
+So we'll jump down to the script section and I'll jump down to the bottom.
+
+7
+00:00:33,390 --> 00:00:37,300
+Let's add a new comment here which says Directives.
+
+8
+00:00:38,430 --> 00:00:41,460
+So do you remember how we add a local custom directive?
+
+9
+00:00:41,790 --> 00:00:45,090
+Feel free to pass the video on, see if you can remember how to do it.
+
+10
+00:00:45,300 --> 00:00:50,550
+But what we do is we create a constant and we need to make sure the name of this constant starts with
+
+11
+00:00:50,550 --> 00:00:53,700
+a lowercase v and is in common case.
+
+12
+00:00:53,850 --> 00:01:01,260
+So we could call this v auto focus and we set this equal to an object and we could add any hooks we
+
+13
+00:01:01,260 --> 00:01:04,720
+want in here, such as created or we're going to use mounted.
+
+14
+00:01:04,830 --> 00:01:13,100
+And we set this equal to a method like this and we can pass the L parameter in here on this L parameter.
+
+15
+00:01:13,100 --> 00:01:20,070
+It will give us access to the element once it's mounted, as in the element which we add this v auto
+
+16
+00:01:20,070 --> 00:01:21,430
+focus directive two.
+
+17
+00:01:21,930 --> 00:01:29,910
+So we can then just focus it with l dot focus and now we can just add this directive to any focus of
+
+18
+00:01:29,910 --> 00:01:32,310
+all element that's in this component.
+
+19
+00:01:32,400 --> 00:01:34,980
+So let's add it to text area which is here.
+
+20
+00:01:35,250 --> 00:01:42,150
+And remember, we need to change the name that we've used here from camel case into dash case so we
+
+21
+00:01:42,150 --> 00:01:45,890
+can up this like this v dash auto focus.
+
+22
+00:01:46,860 --> 00:01:47,520
+Save that.
+
+23
+00:01:47,670 --> 00:01:53,460
+And if we reload this page, we can see that the text area is automatically focused without us needing
+
+24
+00:01:53,460 --> 00:01:54,750
+to click into it.
+
+25
+00:01:55,290 --> 00:02:00,420
+Since this add edit note component is a shared component which is also used on the edit page.
+
+26
+00:02:00,840 --> 00:02:03,130
+It should also work here as well, which it does.
+
+27
+00:02:03,150 --> 00:02:06,420
+We can see the text area auto focused here as well.
+

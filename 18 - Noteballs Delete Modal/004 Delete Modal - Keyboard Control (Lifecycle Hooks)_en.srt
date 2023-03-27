@@ -1,0 +1,348 @@
+1
+00:00:01,150 --> 00:00:07,150
+We usually expect to be able to close a motel like this by hitting the escape key on our keyboard.
+
+2
+00:00:08,109 --> 00:00:15,310
+So let's set up some keyboard handling in the mounted hook of this modal delete note w component.
+
+3
+00:00:15,520 --> 00:00:23,200
+So I'm going to jump to modal delete note W on down to the bottom and I'll create a comment called Keyboard
+
+4
+00:00:23,410 --> 00:00:24,160
+Control.
+
+5
+00:00:26,160 --> 00:00:28,020
+I'm a lot and on mount it took.
+
+6
+00:00:31,370 --> 00:00:37,820
+Toss in a handler to that like that and we'll just log out on mount it for now.
+
+7
+00:00:38,180 --> 00:00:40,880
+Say that we have an error here on Mount.
+
+8
+00:00:40,880 --> 00:00:41,870
+It is not defined.
+
+9
+00:00:41,870 --> 00:00:50,660
+Find us because we need to import this lifecycle from view so that's out it on mounted save that reload
+
+10
+00:00:51,560 --> 00:00:58,390
+show the modal I can see on mount it being locked out and if we hide it and show it again we can say
+
+11
+00:00:58,400 --> 00:00:59,990
+on Mount it is locked out again.
+
+12
+00:01:00,620 --> 00:01:06,350
+So now inside our mounted hook, let's set up an event listener for the key event.
+
+13
+00:01:07,470 --> 00:01:10,170
+Which will be fired after we press key and then let go of it.
+
+14
+00:01:10,560 --> 00:01:18,810
+So let's get rid of this lock and we can just do document, dot, add event listener parentheses and
+
+15
+00:01:18,810 --> 00:01:20,190
+then follow the first parameter.
+
+16
+00:01:20,820 --> 00:01:25,230
+This is the event we're going to listen out for and we're going to listen out for the key event.
+
+17
+00:01:25,650 --> 00:01:27,690
+And the second parameter is our handler.
+
+18
+00:01:27,750 --> 00:01:33,000
+So let's add an arrow function here and let's also passing the event object.
+
+19
+00:01:33,210 --> 00:01:38,640
+I'll replace these parentheses with an E and then we'll just lock that out for now.
+
+20
+00:01:39,900 --> 00:01:50,430
+So console log a save that and reload show a modal and hit the escape key and we can see the keyboard
+
+21
+00:01:50,430 --> 00:01:51,790
+event being locked out there.
+
+22
+00:01:52,770 --> 00:01:58,740
+Within this event object, we can see that when we hit the escape key, this key property is set to
+
+23
+00:01:58,740 --> 00:02:05,490
+escape and this key property is generally the property that we want to check in our JavaScript to determine
+
+24
+00:02:05,490 --> 00:02:05,970
+which.
+
+25
+00:02:07,190 --> 00:02:08,180
+Key was pressed.
+
+26
+00:02:08,870 --> 00:02:11,480
+So let's check if the escape key was pressed.
+
+27
+00:02:11,720 --> 00:02:17,660
+And if so, then we can just fire a closed modal method, thus hiding the modal.
+
+28
+00:02:18,380 --> 00:02:22,910
+So let's remove this console lock and we can just do f e dot.
+
+29
+00:02:24,380 --> 00:02:27,620
+Key is equal to escape.
+
+30
+00:02:28,490 --> 00:02:33,470
+Then you can just fire the close modal method and save that.
+
+31
+00:02:34,660 --> 00:02:35,320
+Reload.
+
+32
+00:02:35,710 --> 00:02:38,230
+Show the moto and hit the escape key.
+
+33
+00:02:39,370 --> 00:02:40,240
+And that's working.
+
+34
+00:02:40,270 --> 00:02:41,680
+We see the modal disappear.
+
+35
+00:02:42,460 --> 00:02:44,290
+However, we do have an issue here.
+
+36
+00:02:45,070 --> 00:02:47,710
+If we look something out inside this event.
+
+37
+00:02:47,710 --> 00:02:48,130
+Listener.
+
+38
+00:02:49,720 --> 00:02:50,980
+We could just log out, close it.
+
+39
+00:02:52,150 --> 00:02:57,610
+Save that and if I reload, click on delete to show the modal and hit escape.
+
+40
+00:02:58,540 --> 00:03:00,910
+Then we see close it being locked out once.
+
+41
+00:03:01,660 --> 00:03:07,990
+But if I show another modal on here escape, it's now been logged out twice this time.
+
+42
+00:03:08,800 --> 00:03:14,350
+And if we show a modal again and hit escape this time it's been locked out three times.
+
+43
+00:03:15,220 --> 00:03:21,070
+And this is because even after the modal is closed, this event listener still exists.
+
+44
+00:03:21,700 --> 00:03:25,150
+This event listener is not being removed when we close the modal.
+
+45
+00:03:26,020 --> 00:03:29,980
+So when we first show a modal, this event listener is set up.
+
+46
+00:03:31,050 --> 00:03:32,160
+Then we closed the motel.
+
+47
+00:03:32,370 --> 00:03:33,540
+This is still sets up.
+
+48
+00:03:34,020 --> 00:03:38,380
+Then we open another motel and we then sets up a second event list.
+
+49
+00:03:38,380 --> 00:03:38,570
+Now.
+
+50
+00:03:38,970 --> 00:03:44,760
+So at this point, we now have two of these event listeners firing and it will keep adding a new event
+
+51
+00:03:44,760 --> 00:03:46,770
+list every time we show a new model.
+
+52
+00:03:47,830 --> 00:03:55,090
+So what we need to do is remove this event listener when the model is closed and we can do this in the
+
+53
+00:03:55,120 --> 00:03:59,650
+on mounted hook, which will be fired when our model is removed from the domain.
+
+54
+00:04:00,040 --> 00:04:07,180
+Now, first, to make an event listener removable, we need to put its callback function into its own
+
+55
+00:04:07,180 --> 00:04:08,350
+named function.
+
+56
+00:04:09,070 --> 00:04:10,840
+So both are mounted hook.
+
+57
+00:04:11,860 --> 00:04:22,029
+I'm going to create a constant called handle keyboard set equal to an arrow function in the eight parameter
+
+58
+00:04:22,720 --> 00:04:23,680
+the event object.
+
+59
+00:04:26,540 --> 00:04:28,250
+Now I'm going to cut these two lines.
+
+60
+00:04:29,830 --> 00:04:32,110
+I'm paste them into this new function.
+
+61
+00:04:33,780 --> 00:04:38,400
+And now we can just select all of this handler from the closing curly brace.
+
+62
+00:04:39,470 --> 00:04:40,400
+Up to the age.
+
+63
+00:04:41,330 --> 00:04:45,710
+I'm just passing in the name of this function handle keyboard.
+
+64
+00:04:47,570 --> 00:04:49,670
+So let's save that and make sure that's still working.
+
+65
+00:04:51,910 --> 00:04:52,870
+Hit the escape gate.
+
+66
+00:04:53,800 --> 00:04:55,170
+And yet that's still working.
+
+67
+00:04:56,230 --> 00:05:01,180
+So now we just need to remove this event list, not in the on mounted hook.
+
+68
+00:05:01,870 --> 00:05:09,610
+So after the on mounted hook will harden on on mounted hook percent arrow function handler.
+
+69
+00:05:11,980 --> 00:05:15,310
+Now to remove this event list, now we can just use the remove event list.
+
+70
+00:05:15,310 --> 00:05:15,820
+No method.
+
+71
+00:05:16,210 --> 00:05:23,980
+So I'm just going to copy all of this line paste line here and change out event list not to remove event
+
+72
+00:05:23,980 --> 00:05:25,840
+list to save that.
+
+73
+00:05:26,470 --> 00:05:29,920
+And we do need to add the on on mounted hook to our imports.
+
+74
+00:05:30,980 --> 00:05:33,490
+So let's add that here on on.
+
+75
+00:05:33,740 --> 00:05:34,310
+Mounted.
+
+76
+00:05:35,090 --> 00:05:35,720
+Save that.
+
+77
+00:05:36,650 --> 00:05:37,910
+Now let's see if this is working.
+
+78
+00:05:38,840 --> 00:05:40,160
+So click the delete button.
+
+79
+00:05:40,250 --> 00:05:41,710
+Show the model here.
+
+80
+00:05:41,770 --> 00:05:42,260
+Escape.
+
+81
+00:05:43,230 --> 00:05:45,340
+And we see our log being fired only once.
+
+82
+00:05:46,500 --> 00:05:53,520
+Click Delete again show the moto hit escape and we now see close it only being logged out once again.
+
+83
+00:05:54,480 --> 00:05:55,650
+So this is not working.
+
+84
+00:05:55,710 --> 00:06:00,150
+That event last night is being removed when the modal is closed and if we keep it an escape here, we
+
+85
+00:06:00,150 --> 00:06:01,500
+don't see anything locked out.
+
+86
+00:06:03,090 --> 00:06:08,760
+So we can now just remove that console.log from the handle keyboard function saved up.
+
+87
+00:06:09,600 --> 00:06:15,510
+And now all we need to do is delete this sucker when the user clicks on delete in the modal.
+

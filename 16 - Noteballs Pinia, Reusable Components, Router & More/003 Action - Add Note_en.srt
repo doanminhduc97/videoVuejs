@@ -1,0 +1,212 @@
+1
+00:00:01,050 --> 00:00:07,170
+Let's add an action to our A store which will allow us to add a new note to this notes array which is
+
+2
+00:00:07,170 --> 00:00:11,420
+in our state in our penny store, thus adding the new note to the page.
+
+3
+00:00:11,430 --> 00:00:14,940
+Since these notes allow coming from these notes right in our state.
+
+4
+00:00:15,150 --> 00:00:18,900
+Now, if we try to add a new notes right now, we see an error.
+
+5
+00:00:18,900 --> 00:00:20,190
+Notes is not defined.
+
+6
+00:00:20,220 --> 00:00:26,310
+That's because if we go to view notes dot view on this add note method on this line here, we're trying
+
+7
+00:00:26,310 --> 00:00:32,850
+to add a new notes object to this notes array ref which no longer exists here, but we now want to add
+
+8
+00:00:32,850 --> 00:00:36,300
+a new note object to this notes array which is in our opinion store.
+
+9
+00:00:36,420 --> 00:00:43,380
+So let's jump back to the penny site and jump to what is Penny a basic example and it shows us here
+
+10
+00:00:43,410 --> 00:00:45,150
+how we add actions to our store.
+
+11
+00:00:45,300 --> 00:00:51,150
+So we just need to add an object named actions after our state and we can place all of our actions in
+
+12
+00:00:51,150 --> 00:00:51,450
+here.
+
+13
+00:00:51,660 --> 00:00:57,540
+I remember actions are just methods which allow us to access the data in our state and then modify it.
+
+14
+00:00:57,840 --> 00:01:04,950
+So let's jump back to store notes and for now I'll just collapse the state method and object by just
+
+15
+00:01:04,950 --> 00:01:11,160
+clicking this little arrow, and after this will add an object called actions and we can now place all
+
+16
+00:01:11,160 --> 00:01:12,210
+of our actions in here.
+
+17
+00:01:12,480 --> 00:01:15,000
+So let's create a new option called add note.
+
+18
+00:01:16,170 --> 00:01:22,140
+And for now, I'm just going to log out a note and say that we can now trigger this action from anywhere
+
+19
+00:01:22,140 --> 00:01:22,860
+within our app.
+
+20
+00:01:23,130 --> 00:01:25,380
+So let's trigger it from view, notes dot view.
+
+21
+00:01:25,560 --> 00:01:31,410
+And we could just trigger this action directly on our Add new notes button here in this clip.
+
+22
+00:01:32,160 --> 00:01:35,550
+And we're pulling in our store as store notes.
+
+23
+00:01:36,480 --> 00:01:41,910
+So to access our store, we could just add store notes and then to access the action, we've just added
+
+24
+00:01:42,270 --> 00:01:42,690
+notes.
+
+25
+00:01:43,320 --> 00:01:49,260
+We can just add dots, add notes, and we don't need to add parentheses to this method when we're triggering
+
+26
+00:01:49,260 --> 00:01:50,160
+it in our template.
+
+27
+00:01:50,250 --> 00:01:52,020
+So let's save that and see if that's working.
+
+28
+00:01:52,800 --> 00:01:56,970
+I'll type in a note and click add new notes and yeah, we can see a note being locked out.
+
+29
+00:01:57,600 --> 00:02:00,200
+So this is successfully firing our action.
+
+30
+00:02:00,540 --> 00:02:06,450
+However, if we jump down to our previous ADD note method which is on view notes dot view, we have
+
+31
+00:02:06,450 --> 00:02:07,890
+these two lines at the bottom.
+
+32
+00:02:08,009 --> 00:02:14,670
+This one which is clearing out the new notes, ref those clearing the text area and this line which
+
+33
+00:02:14,670 --> 00:02:21,690
+is focusing the text area by using this template ref that we've set up which we've added to the text
+
+34
+00:02:21,690 --> 00:02:22,320
+area here.
+
+35
+00:02:22,650 --> 00:02:29,280
+Now we're not going to have access to this remodel to clear out all this template ref to focus the text
+
+36
+00:02:29,280 --> 00:02:36,000
+area from within our store so it makes sense to continue to trigger this local method.
+
+37
+00:02:36,150 --> 00:02:41,730
+Add note when we click on the odd new note button and then trigger our action from here so that we can
+
+38
+00:02:41,730 --> 00:02:46,620
+still fire these two lines at the bottom, which are going to clear out the text area and focus the
+
+39
+00:02:46,620 --> 00:02:47,310
+text area.
+
+40
+00:02:47,460 --> 00:02:48,640
+So let's change that.
+
+41
+00:02:48,640 --> 00:02:55,590
+Click on the add new note button back to what it was triggering this local Add Notes method and we'll
+
+42
+00:02:55,590 --> 00:03:02,580
+comments how all of this code which was setting up the new note object and then on shifting it to notes
+
+43
+00:03:02,580 --> 00:03:08,340
+array ref which we had here before and then will trigger the action in our store instead.
+
+44
+00:03:08,520 --> 00:03:14,880
+So we can just do store notes, dot odd notes, and when we're triggering an action from our script
+
+45
+00:03:14,880 --> 00:03:16,880
+section, we do need to add parentheses.
+
+46
+00:03:16,890 --> 00:03:21,300
+So let's save that and see if that action in our store is still being triggered.
+
+47
+00:03:21,450 --> 00:03:26,730
+I'll reload, type in a note and click the button and yet we can see a note being displayed.
+
+48
+00:03:27,180 --> 00:03:32,160
+Well, this action needs to know what we should actually add to our notes right in the state.
+
+49
+00:03:32,160 --> 00:03:36,960
+So we need to actually pass the content of this note which has been typed into the text area to this
+
+50
+00:03:36,960 --> 00:03:37,440
+option.
+
+51
+00:03:37,680 --> 00:03:43,410
+So we can set up a new note object based on this content and then add it to our notes array that's in
+
+52
+00:03:43,410 --> 00:03:43,950
+the state.
+
+53
+00:03:44,100 --> 00:03:46,110
+We could do this using parameters.
+

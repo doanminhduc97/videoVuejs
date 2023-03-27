@@ -1,0 +1,188 @@
+1
+00:00:01,140 --> 00:00:01,530
+Okay.
+
+2
+00:00:01,530 --> 00:00:03,390
+So I notes pages looking pretty.
+
+3
+00:00:03,390 --> 00:00:04,380
+Gosh darn beautiful.
+
+4
+00:00:04,380 --> 00:00:08,430
+Now let's get this up to actually work by adding some data and methods.
+
+5
+00:00:08,520 --> 00:00:12,120
+We're also going to turn this note into a child component.
+
+6
+00:00:12,120 --> 00:00:16,500
+We're going to add a computed property for displaying the number of characters in each note.
+
+7
+00:00:16,680 --> 00:00:19,830
+And we're also going to set up a custom event using limit.
+
+8
+00:00:19,980 --> 00:00:23,850
+Well, first of all, let's set up a ref where we can store a list of notes.
+
+9
+00:00:24,270 --> 00:00:31,260
+So in view notes that view on a scroll down to the bottom, another script sets up tags.
+
+10
+00:00:31,920 --> 00:00:34,470
+I'm going to create a block comment here which says notes.
+
+11
+00:00:36,120 --> 00:00:40,770
+We'll set up a constant called notes set that equal to a ref.
+
+12
+00:00:40,980 --> 00:00:42,480
+We need to import this method.
+
+13
+00:00:42,780 --> 00:00:48,090
+So a lot another block comment here which says imports and again these comments are optional.
+
+14
+00:00:48,090 --> 00:00:49,770
+You don't need to add them if you don't want to.
+
+15
+00:00:50,190 --> 00:00:55,320
+So we need to import ref from view.
+
+16
+00:00:57,050 --> 00:00:58,760
+And now let's settle our notes.
+
+17
+00:00:58,790 --> 00:00:59,240
+All right.
+
+18
+00:00:59,570 --> 00:01:04,610
+So we'll pass an array into this ref on each item.
+
+19
+00:01:04,610 --> 00:01:08,420
+In the array will be an object, a large, an ID field.
+
+20
+00:01:09,380 --> 00:01:10,790
+Just set up to ID one.
+
+21
+00:01:11,720 --> 00:01:14,190
+I'm a lot of content field for the note content.
+
+22
+00:01:14,720 --> 00:01:17,510
+I'll just stick some lorem in there for some reason.
+
+23
+00:01:17,690 --> 00:01:18,890
+It's not working right now.
+
+24
+00:01:18,920 --> 00:01:22,550
+I'll just copy this lorem from a hard hardcoded notes.
+
+25
+00:01:23,060 --> 00:01:26,800
+Paste that in there and a lot of comma after this object.
+
+26
+00:01:27,730 --> 00:01:28,760
+Duplicate the note.
+
+27
+00:01:29,240 --> 00:01:30,200
+Get rid of this comma.
+
+28
+00:01:31,190 --> 00:01:32,740
+Set the ID to it to.
+
+29
+00:01:33,590 --> 00:01:35,060
+I'll just change the text on this one.
+
+30
+00:01:35,270 --> 00:01:38,240
+This is a shorter note.
+
+31
+00:01:39,110 --> 00:01:40,340
+We'll save that.
+
+32
+00:01:40,700 --> 00:01:45,530
+Now let's display these notes on our page using a V for directive.
+
+33
+00:01:47,480 --> 00:01:52,850
+And we already have a V for directive on this day with the class of card which we're using for our notes.
+
+34
+00:01:53,060 --> 00:01:57,290
+So I'll just change this to be for notes in notes.
+
+35
+00:01:57,530 --> 00:02:01,530
+So we'll use notes as our place holder as we loop through this notes.
+
+36
+00:02:01,550 --> 00:02:01,970
+All right.
+
+37
+00:02:02,600 --> 00:02:02,780
+True.
+
+38
+00:02:02,780 --> 00:02:03,410
+Set up here.
+
+39
+00:02:04,880 --> 00:02:06,780
+We also need to add a key property.
+
+40
+00:02:06,810 --> 00:02:11,570
+I will set this to note it so that this key is always unique.
+
+41
+00:02:11,960 --> 00:02:12,890
+And I'll save that.
+
+42
+00:02:13,040 --> 00:02:15,170
+And we can now see two notes on our page.
+
+43
+00:02:15,740 --> 00:02:20,150
+And we just need to output our content, which is going to be out notes, dark content.
+
+44
+00:02:21,080 --> 00:02:27,980
+So I'll select this text here in this tape with a class of content at double click basis and then note
+
+45
+00:02:27,980 --> 00:02:28,850
+the content.
+
+46
+00:02:29,450 --> 00:02:31,070
+Save that reload.
+
+47
+00:02:31,640 --> 00:02:36,560
+We can now see our two notes on the page which are now coming from our notes array.
+

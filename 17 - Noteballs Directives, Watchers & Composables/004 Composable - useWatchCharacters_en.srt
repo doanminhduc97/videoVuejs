@@ -1,0 +1,244 @@
+1
+00:00:01,430 --> 00:00:08,930
+Now let's say we want to have the same watch characters functionality on our stats page on this input.
+
+2
+00:00:09,710 --> 00:00:17,390
+Well, we could just copy this, watch code, paste it into our stats page views that start view and
+
+3
+00:00:17,390 --> 00:00:21,470
+then just adjust the data property that we're watching here.
+
+4
+00:00:22,010 --> 00:00:23,870
+But then we'd be duplicating code.
+
+5
+00:00:24,290 --> 00:00:29,750
+It'd be better to put this watch into its own composable file, which we can use everywhere.
+
+6
+00:00:30,200 --> 00:00:31,100
+So let's do that.
+
+7
+00:00:31,490 --> 00:00:33,080
+Let's jump to our Explorer.
+
+8
+00:00:33,700 --> 00:00:37,970
+We want to put a composable in a folder called Use Inside the source folder.
+
+9
+00:00:38,390 --> 00:00:41,570
+So that's right click source and choose new folder.
+
+10
+00:00:42,200 --> 00:00:51,290
+Create a folder called Use and then inside that will create a new file called Use Watch Characters talks
+
+11
+00:00:52,700 --> 00:00:53,940
+to set up a composable.
+
+12
+00:00:53,960 --> 00:00:58,940
+We just need to export a function with the same name as our file.
+
+13
+00:00:59,630 --> 00:01:05,330
+So use watch characters like this.
+
+14
+00:01:05,900 --> 00:01:08,120
+Let's jump back to view notes that view.
+
+15
+00:01:08,750 --> 00:01:10,510
+Just call this watcher.
+
+16
+00:01:11,120 --> 00:01:13,460
+Jump to our composable and paste that in here.
+
+17
+00:01:14,060 --> 00:01:15,170
+And actually back on.
+
+18
+00:01:15,170 --> 00:01:16,160
+Do you notice that view?
+
+19
+00:01:16,580 --> 00:01:23,750
+We can now remove the watch method that we're importing, saved up and jump back to use watch characters.
+
+20
+00:01:23,990 --> 00:01:26,120
+And we do need to import this watch method here.
+
+21
+00:01:26,840 --> 00:01:30,770
+So let's just add import watch from view.
+
+22
+00:01:31,100 --> 00:01:36,800
+Now, in order to make this composable generic, we need to be able to pass in the data property that
+
+23
+00:01:36,800 --> 00:01:39,110
+we want to watch as a parameter.
+
+24
+00:01:39,200 --> 00:01:40,910
+So let's just accept that here.
+
+25
+00:01:41,090 --> 00:01:45,200
+So we could just call this value to watch or something like that.
+
+26
+00:01:45,830 --> 00:01:48,650
+Whatever we're passing in here is what we want to watch here.
+
+27
+00:01:48,860 --> 00:01:53,500
+So let's change new notes to value, to watch and save that.
+
+28
+00:01:53,720 --> 00:01:59,780
+And now we should be able to use this composable to watch the number of characters of any data property
+
+29
+00:01:59,780 --> 00:02:03,500
+within our app and then show this alert if it hits 100 characters.
+
+30
+00:02:03,530 --> 00:02:07,340
+So let's jump to view, note stock view and we need to import this composable.
+
+31
+00:02:07,340 --> 00:02:23,240
+So imports use watch characters from slash use slash use watch characters save up a stop to our notes
+
+32
+00:02:23,240 --> 00:02:30,230
+page, jump down to the bottom and we should not be able to use this composable to watch this new note
+
+33
+00:02:30,230 --> 00:02:37,250
+ref, which is bound to the text area so we can just to use watch characters and then pass in the ref
+
+34
+00:02:37,250 --> 00:02:38,120
+that we want to watch.
+
+35
+00:02:38,150 --> 00:02:38,750
+New note.
+
+36
+00:02:39,110 --> 00:02:40,010
+New notes.
+
+37
+00:02:40,640 --> 00:02:41,300
+Save that.
+
+38
+00:02:41,630 --> 00:02:42,980
+Let's see if that still working.
+
+39
+00:02:48,050 --> 00:02:49,160
+Yep, still working.
+
+40
+00:02:49,850 --> 00:02:54,650
+And now we should also be able to use the same functionality on our stats page.
+
+41
+00:02:54,830 --> 00:02:56,720
+So let's jump to our stats page.
+
+42
+00:02:57,710 --> 00:02:59,870
+Source views view stats dot view.
+
+43
+00:03:01,730 --> 00:03:03,830
+And again, we need to import this composable.
+
+44
+00:03:04,340 --> 00:03:10,820
+I'll just copy the import line from view notes dot view paste that here.
+
+45
+00:03:11,910 --> 00:03:14,300
+We should now be able to use it on the stats page as well.
+
+46
+00:03:14,930 --> 00:03:19,370
+However, we don't have a data property set up for this import here, so let's just set that up.
+
+47
+00:03:19,850 --> 00:03:25,790
+So a lot of comment here which says Love Note Balls, I will set up a ref.
+
+48
+00:03:25,790 --> 00:03:32,540
+So const love note balls equals a ref with an initial value of an empty string.
+
+49
+00:03:32,780 --> 00:03:34,580
+Now we need to import ref from view.
+
+50
+00:03:35,270 --> 00:03:38,510
+Let's add that to the top import ref from view.
+
+51
+00:03:38,960 --> 00:03:42,080
+Now let's bind this ref to the input.
+
+52
+00:03:42,440 --> 00:03:45,020
+So here's the input side of the model.
+
+53
+00:03:45,620 --> 00:03:47,510
+Set it to love note balls.
+
+54
+00:03:48,120 --> 00:03:48,800
+Save that.
+
+55
+00:03:49,640 --> 00:03:52,040
+Let's just change this default value to see if it's hooked up.
+
+56
+00:03:52,490 --> 00:03:53,510
+And yep, that's hooked up.
+
+57
+00:03:53,840 --> 00:03:56,690
+So we should now be able to watch the characters in this input.
+
+58
+00:03:56,840 --> 00:04:02,660
+So again, we can just to use watch characters pass in the ref that we want to watch, which is love
+
+59
+00:04:02,690 --> 00:04:05,060
+note balls, love note balls.
+
+60
+00:04:05,660 --> 00:04:09,800
+Save that and hopefully we should see the same functionality here.
+
+61
+00:04:14,110 --> 00:04:15,710
+And yeah, it's working.
+

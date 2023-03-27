@@ -1,0 +1,400 @@
+1
+00:00:01,720 --> 00:00:02,110
+Okay.
+
+2
+00:00:02,110 --> 00:00:04,090
+So our app is basically complete.
+
+3
+00:00:04,480 --> 00:00:08,860
+And in this app we've covered almost everything that we covered in the earlier modules.
+
+4
+00:00:09,280 --> 00:00:13,600
+It's just one more thing that I want to add, which is a modal that gets displayed when we click on
+
+5
+00:00:13,600 --> 00:00:18,970
+a delete button to prompt the user for confirmation before the note is deleted.
+
+6
+00:00:19,180 --> 00:00:25,630
+And the reasons I want to add this, number one, it will allow us to add a reactive object to our app,
+
+7
+00:00:25,630 --> 00:00:26,800
+which we haven't used yet.
+
+8
+00:00:27,010 --> 00:00:31,330
+Number two, it will allow us to use some lifecycle hooks which you haven't used yet.
+
+9
+00:00:31,640 --> 00:00:37,780
+And number three, it will help us to solidify our knowledge of data on events across parent and child
+
+10
+00:00:37,780 --> 00:00:43,450
+components using props limits on model value and update modal value.
+
+11
+00:00:43,900 --> 00:00:49,840
+And I think it's a good idea to go over this parent child stuff again, because these concepts can be
+
+12
+00:00:49,840 --> 00:00:55,390
+quite confusing, yet they're really key for creating solid composition API apps.
+
+13
+00:00:55,630 --> 00:00:58,240
+First, let's create a new component for our module.
+
+14
+00:00:58,390 --> 00:01:01,570
+So I'm going to jump to source components notes.
+
+15
+00:01:02,190 --> 00:01:06,040
+I'm going to create a new file in this folder called Modal.
+
+16
+00:01:06,130 --> 00:01:08,140
+Delete notes that view.
+
+17
+00:01:08,720 --> 00:01:15,310
+And for now, just going to stick our template tags in there on a Dave and I'll just put the text.
+
+18
+00:01:15,340 --> 00:01:17,290
+This is modal.
+
+19
+00:01:17,830 --> 00:01:20,980
+Save that now on our notes component note dot view.
+
+20
+00:01:21,550 --> 00:01:22,390
+Let's jump to that.
+
+21
+00:01:22,600 --> 00:01:24,540
+Components, notes and note here.
+
+22
+00:01:25,330 --> 00:01:30,610
+Let's add a reactive objects with a property for determining whether or not this modal is shown.
+
+23
+00:01:31,060 --> 00:01:32,950
+So I'm going to import ref from view.
+
+24
+00:01:33,190 --> 00:01:34,030
+So I'll add that here.
+
+25
+00:01:36,010 --> 00:01:37,810
+Then I'll scroll down to the bottom.
+
+26
+00:01:38,110 --> 00:01:40,390
+I'm going to add a block comment which says Models.
+
+27
+00:01:41,320 --> 00:01:45,490
+I'm going to set up a new reactive objects called models.
+
+28
+00:01:45,760 --> 00:01:48,820
+So const models equals reactive.
+
+29
+00:01:50,950 --> 00:01:54,100
+And actually it's reactive that we need to import from view, not ref.
+
+30
+00:01:54,250 --> 00:02:01,690
+So let's replace that with reactive passive in the object and I'm going to add a property called delete
+
+31
+00:02:01,780 --> 00:02:08,530
+note and set that equal to false on this property will determine whether or not the modal is shown.
+
+32
+00:02:08,740 --> 00:02:10,120
+So if it's false, we don't show it.
+
+33
+00:02:10,120 --> 00:02:12,130
+And if it's true, then we do show it on.
+
+34
+00:02:12,130 --> 00:02:17,560
+The reason I've used a reactive object here is because in a lot of apps like this, we might have a
+
+35
+00:02:17,560 --> 00:02:18,760
+bunch of different models.
+
+36
+00:02:19,270 --> 00:02:25,150
+So for example, right now when we edit note, we dropped to a new page, but we might decide to replace
+
+37
+00:02:25,150 --> 00:02:28,430
+this functionality with a modal for editing the notes.
+
+38
+00:02:28,780 --> 00:02:33,250
+And so this reactive object gives us a place where we can manage all of our models together.
+
+39
+00:02:33,610 --> 00:02:39,670
+So we might have another property here, edit notes model and then use this to manage.
+
+40
+00:02:40,000 --> 00:02:41,200
+Edit Notes Modal.
+
+41
+00:02:41,470 --> 00:02:43,840
+But for now we're just going to add this delete notes modal.
+
+42
+00:02:43,840 --> 00:02:45,880
+So I'll get rid of that and save that.
+
+43
+00:02:46,210 --> 00:02:53,440
+Okay, so let's import our new modal component and only display it when this delete notes property is
+
+44
+00:02:53,440 --> 00:02:53,800
+true.
+
+45
+00:02:54,130 --> 00:03:03,970
+So we'll jump to our imports and we're going to import modal delete notes from at slush components slash
+
+46
+00:03:03,970 --> 00:03:09,460
+notes slash modal delete note stop view.
+
+47
+00:03:09,890 --> 00:03:10,720
+I'll save that.
+
+48
+00:03:11,080 --> 00:03:13,990
+And now let's place this after our footer element.
+
+49
+00:03:14,320 --> 00:03:19,480
+So modal delete note save that.
+
+50
+00:03:20,020 --> 00:03:21,850
+We can now see that on both of our notes.
+
+51
+00:03:22,120 --> 00:03:26,770
+But let's only display this when models dot delete notes is true.
+
+52
+00:03:27,070 --> 00:03:36,670
+So a lot of the if directive to this modal fake dash if models dot's delete note save that and we see
+
+53
+00:03:36,670 --> 00:03:43,930
+the modal disappear and if we change modal start delete note to true, then we see it reappear.
+
+54
+00:03:44,740 --> 00:03:46,870
+Let's set that back to false and save that.
+
+55
+00:03:47,230 --> 00:03:50,440
+Okay, now let's use Bulma to create a nice looking modal.
+
+56
+00:03:50,770 --> 00:03:52,600
+So let's jump back to the BOMA site.
+
+57
+00:03:52,630 --> 00:03:58,120
+Omega IO docs two components and modal.
+
+58
+00:03:59,570 --> 00:04:08,200
+Let's scroll down a bit here and we're going to use this modal card example, which looks pretty nice.
+
+59
+00:04:08,800 --> 00:04:16,209
+So I'm going to copy all of the code for this and jump to modal delete note dot view.
+
+60
+00:04:16,779 --> 00:04:18,190
+Just paste all of that in here.
+
+61
+00:04:18,399 --> 00:04:25,510
+Get rid of the Dave that we added before, indent it all a bit on, save, reload and so that we can
+
+62
+00:04:25,510 --> 00:04:27,580
+actually see this modal when we click on Delete.
+
+63
+00:04:28,540 --> 00:04:35,800
+Let's jump to our delete button on note dot view, which is here and instead of triggering odd delete
+
+64
+00:04:35,800 --> 00:04:37,750
+note action in our store.
+
+65
+00:04:38,720 --> 00:04:41,030
+We'll instead just show this model.
+
+66
+00:04:41,390 --> 00:04:43,460
+So to do this we can just do models.
+
+67
+00:04:43,530 --> 00:04:45,170
+Dot delete notes.
+
+68
+00:04:45,200 --> 00:04:46,160
+Equals true.
+
+69
+00:04:46,610 --> 00:04:47,240
+Save that.
+
+70
+00:04:47,690 --> 00:04:51,260
+Click on delete and we're still not seeing the model.
+
+71
+00:04:51,530 --> 00:04:54,710
+Let's see if it's being added to our markup here.
+
+72
+00:04:55,780 --> 00:05:03,310
+So I'll inspect this note and we can see the model has been added to the page, but we're not seeing
+
+73
+00:05:03,310 --> 00:05:03,460
+it.
+
+74
+00:05:04,090 --> 00:05:10,750
+And I think that's because we need to add a class of is active to the modal now we can see it.
+
+75
+00:05:11,380 --> 00:05:15,720
+So let's jump back to our modal component and add this class to the route.
+
+76
+00:05:15,720 --> 00:05:18,700
+If is dash active, save that.
+
+77
+00:05:19,120 --> 00:05:22,000
+Now let's click on a delete button and we can now see the modal.
+
+78
+00:05:22,030 --> 00:05:23,770
+So now let's modify this a bit.
+
+79
+00:05:23,770 --> 00:05:25,330
+Let's change this title here.
+
+80
+00:05:25,360 --> 00:05:29,740
+Modal title to delete note question mark save that.
+
+81
+00:05:29,980 --> 00:05:32,050
+Let's add some content to the body here.
+
+82
+00:05:32,050 --> 00:05:41,230
+So inside this modal body class, we'll just add are you sure you want to delete this note?
+
+83
+00:05:41,860 --> 00:05:44,650
+Save that and we can now see that message.
+
+84
+00:05:45,310 --> 00:05:47,980
+Now I want to align these buttons over to the right.
+
+85
+00:05:48,400 --> 00:05:54,910
+And if we jump to this footer element with a class of modal dash car dash four, we can do this by adding
+
+86
+00:05:54,910 --> 00:06:06,700
+one of Bowman's Flexbox classes, which is is dash justify dash content dash items dash and save that
+
+87
+00:06:07,450 --> 00:06:14,710
+actually I think it's is justified content flex and let's try that save that on again you can find all
+
+88
+00:06:14,710 --> 00:06:20,710
+of these classes documented on the board mosaic okay, now I'm going to swap these buttons around.
+
+89
+00:06:21,350 --> 00:06:28,420
+I put the council button first inside this footer and I'm going to change the text in this save changes
+
+90
+00:06:28,420 --> 00:06:31,150
+button to delete.
+
+91
+00:06:32,470 --> 00:06:36,550
+And I think it makes sense to make this button red so we can just change.
+
+92
+00:06:36,550 --> 00:06:37,840
+This is success.
+
+93
+00:06:37,840 --> 00:06:41,470
+Class two is danger to make it red.
+
+94
+00:06:42,370 --> 00:06:44,620
+Okay, this modal is looking pretty good now.
+
+95
+00:06:45,610 --> 00:06:50,890
+Now we just need to get it behaving correctly so that, number one, we can hide it when we click on
+
+96
+00:06:50,890 --> 00:06:57,090
+this X or the council button or if we click outside of the model to do that, we're going to use our
+
+97
+00:06:57,100 --> 00:07:00,550
+click site composable from view use again.
+
+98
+00:07:01,390 --> 00:07:06,070
+And we also need to get this to actually delete the note when we click on the delete button.
+
+99
+00:07:07,080 --> 00:07:12,730
+I'm also going to add some keyboard control to this so that the user can hit escape to close the model.
+
+100
+00:07:13,600 --> 00:07:16,630
+To do that, we're going to make use of some lifecycle hooks.
+

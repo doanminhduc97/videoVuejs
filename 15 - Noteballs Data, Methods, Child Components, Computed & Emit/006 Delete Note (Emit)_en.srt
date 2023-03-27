@@ -1,0 +1,352 @@
+1
+00:00:01,380 --> 00:00:05,550
+Let's allow a note to be deleted when this delete button is clicked.
+
+2
+00:00:06,240 --> 00:00:13,320
+And now that this note is in a child component knocked up, you will need to omit an event from note,
+
+3
+00:00:13,320 --> 00:00:13,800
+not view.
+
+4
+00:00:14,010 --> 00:00:19,950
+When the button is clicked, then listen out for that event on view notes dot view and then fire another
+
+5
+00:00:19,950 --> 00:00:23,490
+method here which then removes the note from the notes array.
+
+6
+00:00:24,090 --> 00:00:28,380
+Since our notes arrays in this parent component are not in this child component.
+
+7
+00:00:29,040 --> 00:00:34,740
+So first let's just trigger a local method in note dot view when this delete button is clicked.
+
+8
+00:00:35,190 --> 00:00:42,000
+So let's find the delete button in the template and that's here and I'll split the attributes on that.
+
+9
+00:00:44,910 --> 00:00:53,220
+A lot of click come to that and I'll also use the Prevent Modifier to stop this link from behaving like
+
+10
+00:00:53,220 --> 00:00:59,130
+a link and trying to send us to a different page and will trigger a local method called Handle.
+
+11
+00:01:00,120 --> 00:01:01,680
+Delete Collect.
+
+12
+00:01:02,710 --> 00:01:04,069
+And let's create this method.
+
+13
+00:01:05,420 --> 00:01:08,630
+So I'll add another block comment here.
+
+14
+00:01:09,260 --> 00:01:10,970
+Handle deletes clicked.
+
+15
+00:01:12,920 --> 00:01:14,210
+I will set up this method.
+
+16
+00:01:14,540 --> 00:01:20,120
+So const handle delete clicks equals an arrow function.
+
+17
+00:01:21,860 --> 00:01:23,030
+For now, I'll just log out.
+
+18
+00:01:23,150 --> 00:01:23,720
+Handle.
+
+19
+00:01:23,810 --> 00:01:24,480
+Delete.
+
+20
+00:01:24,590 --> 00:01:25,190
+Clicked.
+
+21
+00:01:25,640 --> 00:01:26,270
+Save that.
+
+22
+00:01:27,200 --> 00:01:31,070
+Click on a delete button and you can see that method is being fired.
+
+23
+00:01:31,100 --> 00:01:34,610
+So now we can emit a custom event from this method.
+
+24
+00:01:35,000 --> 00:01:37,760
+Well, first of all, we need to set up our emits array.
+
+25
+00:01:39,260 --> 00:01:40,280
+Do you remember how we do that?
+
+26
+00:01:41,210 --> 00:01:43,610
+It's a little bit like how we set up props.
+
+27
+00:01:45,050 --> 00:01:48,110
+And if you want to try it on your own, then feel free to pause the video.
+
+28
+00:01:50,120 --> 00:01:53,180
+But anyway, I'm going to add a comment which says emits.
+
+29
+00:01:54,890 --> 00:02:03,120
+And to set up our emits, we can create a constant called emit, set it equal to the define emits method.
+
+30
+00:02:03,950 --> 00:02:07,310
+And we can pass all of our emits in here in an array.
+
+31
+00:02:07,940 --> 00:02:10,580
+So let's define and emit called delete.
+
+32
+00:02:11,060 --> 00:02:16,910
+Clicked on save that and we can now emit this event from this component.
+
+33
+00:02:17,930 --> 00:02:20,090
+So back to our handle delete click method.
+
+34
+00:02:20,960 --> 00:02:25,370
+We can now just do emit parentheses and then delete clicked.
+
+35
+00:02:26,000 --> 00:02:28,940
+Save that, make sure we have no errors.
+
+36
+00:02:29,720 --> 00:02:34,700
+Now we can listen out for this delete clicked event in the parent component view notes dot view.
+
+37
+00:02:35,120 --> 00:02:36,410
+So let's jump to that component.
+
+38
+00:02:37,710 --> 00:02:40,290
+And jump to our notes component here.
+
+39
+00:02:41,520 --> 00:02:42,090
+I'm a lot.
+
+40
+00:02:44,350 --> 00:02:45,910
+A custom event under here.
+
+41
+00:02:45,910 --> 00:02:52,960
+So at Delete Clicks, which is the name we used for our remit when we received that event, let's trigger
+
+42
+00:02:52,960 --> 00:02:58,000
+a method in this component, so we'll trigger a method called delete note.
+
+43
+00:02:59,230 --> 00:03:00,280
+Let's create that method.
+
+44
+00:03:01,570 --> 00:03:06,470
+So down at the bottom, a lot of block comment which says delete notes.
+
+45
+00:03:07,280 --> 00:03:16,750
+Now we can set up this method const delete notes equals arrow function let's logout delete note for
+
+46
+00:03:16,750 --> 00:03:23,500
+now save that click on the delete button and yeah we can see this method in the parent component is
+
+47
+00:03:23,500 --> 00:03:24,190
+being fired.
+
+48
+00:03:25,870 --> 00:03:30,850
+However, at this point, how do we know which note to remove from the array?
+
+49
+00:03:31,480 --> 00:03:37,960
+We need something to identify the note that we want to delete so we could use the ID property.
+
+50
+00:03:38,410 --> 00:03:44,740
+So if we jump back to note dot view, we could pass the note ID along with this omit so we can just
+
+51
+00:03:44,740 --> 00:03:46,110
+not a second parameter here.
+
+52
+00:03:47,210 --> 00:03:50,830
+We can grab the ID from this note which we're passing down.
+
+53
+00:03:51,580 --> 00:03:52,990
+So this is going to be our props.
+
+54
+00:03:53,200 --> 00:03:54,910
+Don't note Dot's ID.
+
+55
+00:03:56,830 --> 00:03:59,170
+So in here we can just do props notes.
+
+56
+00:03:59,610 --> 00:04:01,210
+I'd say that.
+
+57
+00:04:02,080 --> 00:04:09,050
+Now, let's jump back to the parent component view notes dot view down to this delete note method and
+
+58
+00:04:09,100 --> 00:04:10,780
+we could pass this parameter in here.
+
+59
+00:04:11,890 --> 00:04:14,770
+So let's call it ID to delete.
+
+60
+00:04:17,740 --> 00:04:20,050
+Let's just log that out, make sure it's getting through.
+
+61
+00:04:20,079 --> 00:04:22,180
+So I need to delete.
+
+62
+00:04:22,780 --> 00:04:23,440
+Save that.
+
+63
+00:04:24,010 --> 00:04:24,750
+I'll reload.
+
+64
+00:04:24,790 --> 00:04:25,930
+Click on a delete button.
+
+65
+00:04:26,590 --> 00:04:33,370
+Yeah, we can see delete note ID one, which is the idea of the first note.
+
+66
+00:04:33,820 --> 00:04:38,310
+And if we click on the delete button on the second note, we can see delete note ID too.
+
+67
+00:04:39,430 --> 00:04:46,360
+So we know that this ID is going through correctly and now there's a number of ways we could remove
+
+68
+00:04:46,450 --> 00:04:47,860
+the notes from the array.
+
+69
+00:04:48,820 --> 00:04:55,810
+We could figure out the index of the notes based on the ID and then delete the item, which is index.
+
+70
+00:04:56,260 --> 00:05:03,880
+But if you want to use a one line solution and we can use filter to set this notes array to itself,
+
+71
+00:05:04,210 --> 00:05:10,060
+but filtered so that only the notes which don't have this ID are returned.
+
+72
+00:05:11,340 --> 00:05:15,390
+So what we can do here, we're going to overwrite this notes array ref.
+
+73
+00:05:19,280 --> 00:05:27,470
+So to access that ref we can do notes dot value and then to overwrite it we can just do equals and we're
+
+74
+00:05:27,470 --> 00:05:31,310
+going to do notes that value again, but this time we're going to filter it.
+
+75
+00:05:31,550 --> 00:05:34,340
+So don't filter our first.
+
+76
+00:05:34,340 --> 00:05:39,260
+We need to add a placeholder which will be used as we're looping through the array, as it's looking
+
+77
+00:05:39,260 --> 00:05:40,430
+at each item in the array.
+
+78
+00:05:40,760 --> 00:05:44,810
+So we can just use note for that that we can add an arrow function.
+
+79
+00:05:47,180 --> 00:05:50,660
+Which will be fired for each note in the array as we're looping through it.
+
+80
+00:05:51,590 --> 00:05:53,990
+And then we can just specify what we want to return.
+
+81
+00:05:55,100 --> 00:05:56,390
+I'll just stretch this out a minute.
+
+82
+00:05:59,290 --> 00:06:03,800
+So let's return only items in the right notes.
+
+83
+00:06:03,850 --> 00:06:09,550
+The ID is not equal to this idea that we're passing into this function.
+
+84
+00:06:09,910 --> 00:06:12,850
+So not equal to ID to delete.
+
+85
+00:06:14,000 --> 00:06:15,220
+And I think they should do it.
+
+86
+00:06:15,230 --> 00:06:18,290
+So let's save the reload.
+
+87
+00:06:19,750 --> 00:06:20,530
+Click on Delete.
+
+88
+00:06:21,830 --> 00:06:23,420
+We can now delete our notes.
+

@@ -1,0 +1,156 @@
+1
+00:00:01,310 --> 00:00:04,760
+Let's make use watch characters composable a bit more flexible.
+
+2
+00:00:05,420 --> 00:00:11,270
+So right now, the alert will always be fired when the length of the characters reaches 100.
+
+3
+00:00:11,600 --> 00:00:16,790
+But let's say we want to be able to adjust the number of characters at which this fire's, let's say,
+
+4
+00:00:16,790 --> 00:00:17,750
+on the notes page.
+
+5
+00:00:17,750 --> 00:00:19,880
+We want to fire this 100 characters.
+
+6
+00:00:20,270 --> 00:00:24,680
+But on the stats page, in this input, we want to fire this up 50 characters.
+
+7
+00:00:25,100 --> 00:00:31,490
+Well, we could do this by adding another parameter to use what characters function here.
+
+8
+00:00:31,730 --> 00:00:38,150
+So let's add a second parameter here called max chars and we can pass the same on.
+
+9
+00:00:38,150 --> 00:00:40,610
+We use this composable in our components.
+
+10
+00:00:41,120 --> 00:00:47,210
+So in our if statement here instead of if new value length is equal to 100 or two, if new value dot
+
+11
+00:00:47,240 --> 00:00:49,070
+length is equal to max chars.
+
+12
+00:00:49,640 --> 00:00:55,520
+So I'll replace 100 with max chars and we'll also output this number in our alert as well.
+
+13
+00:00:56,390 --> 00:00:58,670
+So I'll change this to a template string.
+
+14
+00:00:59,630 --> 00:01:03,600
+So I'll replace the hundred with dollar curly braces.
+
+15
+00:01:03,620 --> 00:01:05,780
+I will output this max chars.
+
+16
+00:01:06,470 --> 00:01:11,210
+Let's get this max charles parameter a default value in case it's not been provided.
+
+17
+00:01:11,600 --> 00:01:16,700
+We can do that by just setting max chars equals to 100 save up.
+
+18
+00:01:17,210 --> 00:01:23,240
+And since we're not currently providing this Max Charles parameter on the notes page, then this should
+
+19
+00:01:23,240 --> 00:01:27,500
+just work as it did before by firing the alerts 100 characters.
+
+20
+00:01:27,590 --> 00:01:31,340
+So let's just test that on yet.
+
+21
+00:01:31,340 --> 00:01:33,170
+That's still working out 100 characters.
+
+22
+00:01:33,380 --> 00:01:38,620
+So let's say on our notes page, we just want to use the default functionality with 100 characters.
+
+23
+00:01:38,630 --> 00:01:42,500
+But on our stats page we want the max chars to be 50 characters.
+
+24
+00:01:43,010 --> 00:01:47,450
+So let's jump to the stats page and jump to views that stop view.
+
+25
+00:01:48,290 --> 00:01:54,650
+Let's scroll down to where we're triggering our composable passive in the second parameter of 50.
+
+26
+00:01:54,890 --> 00:01:56,960
+Now let's save that reload.
+
+27
+00:01:57,470 --> 00:01:59,210
+This should be firing a little bit sooner now.
+
+28
+00:01:59,360 --> 00:02:01,120
+50 characters on.
+
+29
+00:02:01,190 --> 00:02:01,370
+Yeah.
+
+30
+00:02:01,820 --> 00:02:04,220
+And our alert says only 50 characters allowed.
+
+31
+00:02:04,250 --> 00:02:04,910
+Gosh darn it.
+
+32
+00:02:05,330 --> 00:02:09,320
+And so composable is now a lot more flexible and useful.
+
+33
+00:02:09,770 --> 00:02:13,580
+And of course, we could make it more flexible with additional parameters, etc..
+
+34
+00:02:13,970 --> 00:02:19,100
+Now, for a simple composable like this, which only contains a watcher, then it makes sense to just
+
+35
+00:02:19,100 --> 00:02:24,440
+import the composable and just fire the composable function like we're doing here.
+
+36
+00:02:24,860 --> 00:02:30,740
+But for more complicated composable, which contain a bunch of different things such as data, methods,
+
+37
+00:02:30,740 --> 00:02:36,020
+computed properties, etc., then it makes more sense to only extract the things that we need from the
+
+38
+00:02:36,020 --> 00:02:42,680
+composable using restructuring and for a reminder of how we do that with more complex composable as
+
+39
+00:02:42,680 --> 00:02:46,220
+jump back to module 11, the composable module.
+

@@ -1,0 +1,184 @@
+1
+00:00:01,210 --> 00:00:04,150
+So how can we pass this ID to get it?
+
+2
+00:00:04,390 --> 00:00:09,500
+Well, you might think that we could just start parentheses to our get to here and pass it in like this.
+
+3
+00:00:09,850 --> 00:00:12,310
+Route dot params dot.
+
+4
+00:00:12,310 --> 00:00:14,200
+I'd say that.
+
+5
+00:00:14,360 --> 00:00:21,820
+Then just to still file down to get to and maybe pass this parameter in as a second parameter.
+
+6
+00:00:23,290 --> 00:00:24,720
+Well, we can see this doesn't work.
+
+7
+00:00:24,730 --> 00:00:29,750
+We see an error in the console store notes don't get no content is not a function.
+
+8
+00:00:30,250 --> 00:00:32,380
+And that's because this is not a function.
+
+9
+00:00:32,380 --> 00:00:36,190
+It's just an object property that's assigned to a function.
+
+10
+00:00:36,200 --> 00:00:42,130
+But we can get around this by making God gets a return a function with the parameter that we're passing
+
+11
+00:00:42,130 --> 00:00:42,460
+through.
+
+12
+00:00:43,360 --> 00:00:48,040
+So let's get rid of this ID parameter and get rid of this return line.
+
+13
+00:00:48,490 --> 00:00:52,630
+What we can do is just return an arrow function like this.
+
+14
+00:00:53,830 --> 00:00:58,430
+Pass in the parameter here so ID and let's see if we can lock this out now.
+
+15
+00:00:58,450 --> 00:01:01,120
+So console log on.
+
+16
+00:01:01,120 --> 00:01:08,470
+A lot of string key I.D. from getter colon and then we'll spits out this ID parameter, so we'll save
+
+17
+00:01:08,470 --> 00:01:09,850
+that reload.
+
+18
+00:01:10,150 --> 00:01:16,270
+Now we can see that's working ID from getter ID one and we see a warning here, but don't worry about
+
+19
+00:01:16,270 --> 00:01:16,510
+that.
+
+20
+00:01:16,510 --> 00:01:21,220
+That's just because getter is returning a function up moment and not a string.
+
+21
+00:01:21,850 --> 00:01:28,450
+And we're assigning that to this note content ref which is being passed to add edit note in the v model
+
+22
+00:01:28,720 --> 00:01:32,230
+on the model value prop on this component is expecting a string.
+
+23
+00:01:32,710 --> 00:01:35,000
+So we'll see this disappear when we get get to work.
+
+24
+00:01:35,200 --> 00:01:42,040
+So let's jump back to store notes as and now we can use this I.D. to grab the correct notes on this
+
+25
+00:01:42,040 --> 00:01:47,170
+content property from the notes array that's in our state so we can use filter to do this.
+
+26
+00:01:47,440 --> 00:01:51,970
+So inside this method here, we're going to return our notes.
+
+27
+00:01:51,970 --> 00:01:57,880
+All right, so state the notes, but then we're going to filter it with the filter method, stretch
+
+28
+00:01:57,880 --> 00:01:58,530
+this out a bit.
+
+29
+00:01:58,540 --> 00:02:01,360
+So this is going to loop through each item in our array.
+
+30
+00:02:01,360 --> 00:02:05,260
+So we're going to need a placeholder for each item as it's going through.
+
+31
+00:02:05,320 --> 00:02:06,910
+So we'll use note for that.
+
+32
+00:02:07,090 --> 00:02:13,210
+Then we add another arrow function, specify criteria for the notes that we want to grab and we want
+
+33
+00:02:13,210 --> 00:02:20,410
+to grab the notes where the ID property is equal to the ID property that we're passing in here from
+
+34
+00:02:20,410 --> 00:02:21,850
+our edit note page.
+
+35
+00:02:22,000 --> 00:02:27,640
+So we want to return notes where the ID is equal to ID.
+
+36
+00:02:28,540 --> 00:02:34,330
+And since all of our IDs are going to be unique, that this will return an array containing just the
+
+37
+00:02:34,330 --> 00:02:36,040
+note object that we're looking for.
+
+38
+00:02:36,070 --> 00:02:41,560
+So since this is going to be an array, we need to grab the first and only item from the array by adding
+
+39
+00:02:41,560 --> 00:02:43,130
+square brackets zero.
+
+40
+00:02:43,150 --> 00:02:47,680
+And then from that we want to drop the content property so we can just do dot content.
+
+41
+00:02:48,430 --> 00:02:50,320
+Let's save that and see if this is working.
+
+42
+00:02:50,650 --> 00:02:51,670
+Reload the page.
+
+43
+00:02:51,850 --> 00:02:52,180
+Okay.
+
+44
+00:02:52,180 --> 00:02:59,080
+So we're edit notes id and we are seeing the content from the notes with an ID of ID one.
+
+45
+00:02:59,410 --> 00:03:04,270
+And if we jump back to the notes page, click on edit on the second note, then we see the content from
+
+46
+00:03:04,270 --> 00:03:08,470
+the second note with ID to being loaded into the text area.
+

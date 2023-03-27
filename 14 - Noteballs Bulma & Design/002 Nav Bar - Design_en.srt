@@ -1,0 +1,156 @@
+1
+00:00:01,100 --> 00:00:03,950
+Let's add a nice, beautiful number to our app.
+
+2
+00:00:04,030 --> 00:00:08,720
+Now, first of all, let's just create a component for it which will import into view.
+
+3
+00:00:08,720 --> 00:00:11,430
+And for some reason my components folder has disappeared.
+
+4
+00:00:11,450 --> 00:00:13,430
+But you should have a components folder here.
+
+5
+00:00:13,700 --> 00:00:16,820
+I'm going to create the components inside that.
+
+6
+00:00:16,820 --> 00:00:19,310
+I'm going to create a folder called layout.
+
+7
+00:00:19,730 --> 00:00:24,220
+And I don't like the way these code groups are folders together like this by default.
+
+8
+00:00:24,290 --> 00:00:30,080
+So I'm just going to fix up my going to code and preferences and settings and I going to search for
+
+9
+00:00:30,080 --> 00:00:30,800
+compact.
+
+10
+00:00:31,070 --> 00:00:37,820
+Now we can just uncheck this compact folders option and we now have a normal folder system here.
+
+11
+00:00:37,850 --> 00:00:44,660
+So inside the layout folder, I'm going to create a file called NAV Bar Dot View and for now we'll just
+
+12
+00:00:44,660 --> 00:00:51,800
+start our template tags just out of Dave with my now bar for the text.
+
+13
+00:00:51,860 --> 00:00:54,890
+Now let's jump to that view and import this component.
+
+14
+00:00:55,820 --> 00:00:59,000
+So a lot of our script sets up tags.
+
+15
+00:00:59,720 --> 00:01:03,410
+I'm going to add a block comment here which just says imports.
+
+16
+00:01:05,209 --> 00:01:16,190
+And then we'll import not far from slash components, slash, layout, slash, not bar dot view.
+
+17
+00:01:16,220 --> 00:01:20,550
+And I use these big comments to split up my code into sections.
+
+18
+00:01:20,570 --> 00:01:24,120
+I just find it makes it a lot easier for me to scan through my code.
+
+19
+00:01:24,150 --> 00:01:25,620
+Well, this is entirely optional.
+
+20
+00:01:25,640 --> 00:01:28,040
+You don't need to add these comments if you don't want to.
+
+21
+00:01:28,130 --> 00:01:30,790
+Now, let's take this not bar component on the page.
+
+22
+00:01:30,800 --> 00:01:35,360
+So I'm going to get rid of these routes of view length for now and just output on up.
+
+23
+00:01:36,090 --> 00:01:37,100
+I'll save that.
+
+24
+00:01:37,100 --> 00:01:39,290
+And yeah, we can see mine up on the page.
+
+25
+00:01:39,320 --> 00:01:44,490
+So now let's jump to the BOMA site and we're going to go to Components and number.
+
+26
+00:01:44,720 --> 00:01:52,380
+Scroll down, stretch this out a bit and we're just going to copy this example here for a basic number
+
+27
+00:01:52,400 --> 00:01:53,550
+and then we're going to modify it.
+
+28
+00:01:53,570 --> 00:01:59,690
+So I went to copy all of this code, move this back over and then we'll jump soon enough by you, paste
+
+29
+00:01:59,690 --> 00:02:04,820
+it all in here, indent that save and we can now see.
+
+30
+00:02:05,060 --> 00:02:12,050
+Now I'll just zoom out a little bit and I want end up lots of nice green color instead of white.
+
+31
+00:02:12,980 --> 00:02:16,190
+And we can do that by adding a class to this nav element.
+
+32
+00:02:16,370 --> 00:02:17,260
+Have split the attributes.
+
+33
+00:02:17,270 --> 00:02:21,520
+I'm not using the split YAML attributes extension which we installed earlier.
+
+34
+00:02:22,010 --> 00:02:27,800
+A lot of class of is dash success say that we now have a nice green number.
+
+35
+00:02:27,860 --> 00:02:32,570
+And again, I'm not going to be explaining all of these classes from Boma too much because I want to
+
+36
+00:02:32,570 --> 00:02:36,170
+stay focused on view on the composition API as much as possible.
+
+37
+00:02:36,260 --> 00:02:41,150
+But you can find all of these available classes on the app, on the site, for example, for this not
+
+38
+00:02:41,160 --> 00:02:42,020
+by video down.
+
+39
+00:02:42,200 --> 00:02:45,230
+Colors shows you how to add all of these different colors here.
+

@@ -1,0 +1,272 @@
+1
+00:00:01,260 --> 00:00:08,220
+So if the user clicks on this cancel button, all this X button, then we want to hide this modal.
+
+2
+00:00:08,640 --> 00:00:12,600
+Now these buttons are in our child component modal to the note dot view.
+
+3
+00:00:12,930 --> 00:00:20,700
+But if the user clicks these buttons, then we want to modify the models dot delete note property,
+
+4
+00:00:20,700 --> 00:00:22,500
+which is on the parent component.
+
+5
+00:00:23,100 --> 00:00:26,040
+And one way we could do this is by emitting a custom event.
+
+6
+00:00:26,820 --> 00:00:32,009
+Let me click on these buttons and then in the parent component note dot view listening out.
+
+7
+00:00:32,970 --> 00:00:35,490
+For that event and when it's received.
+
+8
+00:00:35,970 --> 00:00:39,030
+Set models dot delete note but to false.
+
+9
+00:00:39,690 --> 00:00:43,620
+However, as we learned earlier in the course, we don't actually need to do this.
+
+10
+00:00:44,620 --> 00:00:46,240
+We can get a child component.
+
+11
+00:00:47,250 --> 00:00:55,200
+To directly modify a data property which is on its parent component by passing this reactive data property
+
+12
+00:00:55,980 --> 00:01:03,210
+down to the child component using V model, then receiving the value of the model, using the special
+
+13
+00:01:03,240 --> 00:01:10,620
+model value prop and then updating the source of that model value on the parent component by using update
+
+14
+00:01:10,620 --> 00:01:11,490
+model value.
+
+15
+00:01:11,940 --> 00:01:18,360
+Well, first of all, let's pass down model's dot delete note to the child component using V model.
+
+16
+00:01:18,780 --> 00:01:22,170
+So let's jump up to our model delete note component here.
+
+17
+00:01:22,800 --> 00:01:27,390
+I'm allowed a V model directive and set that to the same as the V.
+
+18
+00:01:27,390 --> 00:01:35,460
+If so, models dot delete note paste that in there save that we can now receive this v model using the
+
+19
+00:01:35,460 --> 00:01:38,610
+special model value prop on the child component.
+
+20
+00:01:38,610 --> 00:01:48,300
+So let's jump to model delete note view at the script section on the setup attribute and the sets of
+
+21
+00:01:48,460 --> 00:01:48,990
+props.
+
+22
+00:01:48,990 --> 00:01:50,940
+So a lot of comment here which says props.
+
+23
+00:01:51,930 --> 00:01:59,100
+I'm a lot of constant call props set by equal to the define props method percent and object.
+
+24
+00:01:59,100 --> 00:02:00,540
+I will define our props here.
+
+25
+00:02:01,290 --> 00:02:08,759
+So to receive this data property that we're passing down with V model, we need to use the model value
+
+26
+00:02:08,759 --> 00:02:11,550
+prop set that equal to an object.
+
+27
+00:02:12,330 --> 00:02:17,640
+The type is going to be boolean because models up to the know is a billion.
+
+28
+00:02:17,640 --> 00:02:19,230
+It's only going to be true or false.
+
+29
+00:02:19,630 --> 00:02:23,430
+I we'll set the default to false and save that.
+
+30
+00:02:23,910 --> 00:02:29,340
+And to make sure this is being passed down correctly and received correctly, let's just output this
+
+31
+00:02:29,430 --> 00:02:32,040
+model value prop in our template.
+
+32
+00:02:32,040 --> 00:02:39,750
+So after the text that we added to the body without a pre tag and just output double curly braces and
+
+33
+00:02:40,680 --> 00:02:47,580
+model value, save that, I'll just reload the app, click on delete and yeah, we can see that's going
+
+34
+00:02:47,580 --> 00:02:50,010
+through because we can see true here.
+
+35
+00:02:50,430 --> 00:02:54,120
+Now let's just remove this pre tuck and save that.
+
+36
+00:02:54,630 --> 00:02:59,130
+Now let's create a method that can be fired when we click on the x button or the console button.
+
+37
+00:02:59,640 --> 00:03:07,380
+So let's jump down to the script section in modal delete note dot view on a section called Close Modal
+
+38
+00:03:08,730 --> 00:03:14,730
+and I'll create a constant called Close Modal set that equal to an arrow function.
+
+39
+00:03:15,780 --> 00:03:19,950
+And for now we'll just log out Close Modal, save that.
+
+40
+00:03:20,760 --> 00:03:23,280
+Now let's trigger this method on buttons.
+
+41
+00:03:23,760 --> 00:03:27,720
+So the council button is going to break this up onto multiple lines.
+
+42
+00:03:28,110 --> 00:03:34,440
+Split the attributes I'm allowed to click on the UT Click Equals Close Modal.
+
+43
+00:03:35,490 --> 00:03:36,720
+Then I'm going to copy this.
+
+44
+00:03:36,720 --> 00:03:39,540
+Click on let find this little button.
+
+45
+00:03:40,410 --> 00:03:41,310
+Where is that thing?
+
+46
+00:03:42,090 --> 00:03:42,810
+Oh, here it is.
+
+47
+00:03:43,620 --> 00:03:49,440
+I'll split that onto multiple lines and split the attributes I'm just paste in that click on.
+
+48
+00:03:49,440 --> 00:03:56,100
+Let say that unless make sure this close modal method is firing.
+
+49
+00:03:56,670 --> 00:03:57,840
+Click on the console button.
+
+50
+00:03:58,140 --> 00:04:01,590
+We see the lock click on the X button and we see the log.
+
+51
+00:04:02,250 --> 00:04:07,290
+So now we just need to omit the update model value event in this method.
+
+52
+00:04:07,830 --> 00:04:10,050
+So first of all, we need to define our omits.
+
+53
+00:04:10,440 --> 00:04:18,660
+So let's order omits section create a constant called omit set that equal to the defined limits method,
+
+54
+00:04:19,529 --> 00:04:26,670
+pass in an array and we'll just add the updates called on modal value.
+
+55
+00:04:27,420 --> 00:04:30,930
+Save that and we can now omit this special event.
+
+56
+00:04:31,650 --> 00:04:37,410
+So in our closed modal method we can just to omit and then.
+
+57
+00:04:38,420 --> 00:04:39,710
+Update model value.
+
+58
+00:04:41,510 --> 00:04:47,570
+So this is going to change the source data property in the parent component that we're passing down
+
+59
+00:04:47,570 --> 00:04:50,290
+with the model and receiving with model value.
+
+60
+00:04:51,260 --> 00:04:55,900
+So it's going to update this delete note property in the parent component note dot view.
+
+61
+00:04:56,600 --> 00:05:00,690
+So we need to tell it what value to set it to and we want to hide the modal.
+
+62
+00:05:00,710 --> 00:05:02,480
+So we want to set this back to false.
+
+63
+00:05:03,140 --> 00:05:05,060
+So let's jump down to this emit.
+
+64
+00:05:05,810 --> 00:05:08,060
+We can just add false as a second parameter.
+
+65
+00:05:08,810 --> 00:05:10,460
+Let's save that and see if it's working.
+
+66
+00:05:11,690 --> 00:05:12,920
+Show the delete model.
+
+67
+00:05:13,250 --> 00:05:15,560
+Click on the X and that's working.
+
+68
+00:05:16,220 --> 00:05:18,650
+Click on Cancel and that's working as well.
+

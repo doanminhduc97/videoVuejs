@@ -1,0 +1,80 @@
+1
+00:00:00,830 --> 00:00:05,480
+Let's redirect the user back to the notes view after this note has been saved.
+
+2
+00:00:06,170 --> 00:00:08,450
+So let's jump to view edit note to view.
+
+3
+00:00:08,900 --> 00:00:12,320
+So we need to do this in our script section after this line.
+
+4
+00:00:12,440 --> 00:00:19,790
+So in the options API, we could just do this dot dollar to then not push on, push them to the top.
+
+5
+00:00:20,720 --> 00:00:23,450
+Well, in the composition API, this is not going to work.
+
+6
+00:00:23,510 --> 00:00:24,470
+So let's get rid of that.
+
+7
+00:00:24,890 --> 00:00:30,080
+And we need to import the use router composable from view router.
+
+8
+00:00:30,170 --> 00:00:33,500
+So let's jump up to the top on here where we're importing use route.
+
+9
+00:00:33,710 --> 00:00:37,250
+We can just add use router to that.
+
+10
+00:00:37,550 --> 00:00:41,000
+We need to assign this to a constant before we can use it.
+
+11
+00:00:41,030 --> 00:00:44,240
+So we can do that after we've set up our use route constant.
+
+12
+00:00:44,510 --> 00:00:50,270
+So we can just do const use actually const routes equals use router.
+
+13
+00:00:50,780 --> 00:00:57,350
+And we can now access all of the usual routes of methods such as push and replace and back using this
+
+14
+00:00:57,350 --> 00:00:57,890
+constant.
+
+15
+00:00:57,920 --> 00:01:00,980
+So now down to handle save collect method.
+
+16
+00:01:01,250 --> 00:01:07,580
+After we update the note, we can just do router push and we'll push them back to the notes page which
+
+17
+00:01:07,580 --> 00:01:08,840
+is up the path slash.
+
+18
+00:01:09,620 --> 00:01:11,300
+Let's say that and see if that's working.
+
+19
+00:01:11,630 --> 00:01:14,930
+Reload the page, change the content to save.
+
+20
+00:01:15,260 --> 00:01:19,700
+And yet we're back on the list of notes and we can see that the note has been updated.
+
